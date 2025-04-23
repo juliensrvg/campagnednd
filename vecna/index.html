@@ -18,7 +18,7 @@
     header, nav, main {
       padding: 20px;
       margin: 20px;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(0, 0, 0, 0.6); /* Un peu plus opaque pour le contraste */
       border-radius: 8px;
     }
 
@@ -44,7 +44,7 @@
       margin: 10px;
     }
 
-    .chapitre a, .presentation a {
+    .chapitre a, .presentation a, .back-link {
       font-size: 1.5em;
       font-weight: bold;
       color: white;
@@ -52,33 +52,36 @@
       transition: color 0.3s;
     }
 
-    .chapitre a:hover, .presentation a:hover {
+    .chapitre a:hover, .presentation a:hover, .back-link:hover {
       text-decoration: underline;
       color: #ccc;
     }
   </style>
 </head>
 <body>
-  <h1><em>Vecna au seuil du néant</em></h1>
-  <p>Bienvenue dans le résumé de ma campagne <strong>"Vecna au seuil du néant"</strong>. Découvrez l'histoire à travers ces différents chapitres et la présentation de mes joueurs.</p>
-  <ul>
-    <li class="presentation"><a href="presentation.html">Présentation</a></li>
-    <li class="chapitre"><a href="chap1.html">Chapitre 1</a></li>
-    <li class="chapitre"><a href="chap2.html">Chapitre 2</a></li>
-    <li class="chapitre"><a href="chap3.html">Chapitre 3</a></li>
-    <li class="chapitre"><a href="chap4.html">Chapitre 4</a></li>
-    <li class="chapitre"><a href="chap5.html">Chapitre 5</a></li>
-    <li class="chapitre"><a href="chap6.html">Chapitre 6</a></li>
-    <li class="chapitre"><a href="chap7.html">Chapitre 7</a></li>
-    <li class="chapitre"><a href="chap8.html">Chapitre 8</a></li>
-    <li class="chapitre"><a href="chap9.html">Chapitre 9</a></li>
-    <li class="chapitre"><a href="chap10.html">Chapitre 10</a></li>
-    <li class="chapitre"><a href="chap11.html">Chapitre 11</a></li>
-    <li class="chapitre"><a href="chap12.html">Chapitre 12</a></li>
-    <li class="chapitre"><a href="chap13.html">Chapitre 13</a></li>
+  <header>
+    <h1><em>Vecna au seuil du néant</em></h1>
+    <p>Bienvenue dans le résumé de ma campagne <strong>"Vecna au seuil du néant"</strong>. Découvrez l'histoire à travers ces différents chapitres et la présentation de mes joueurs.</p>
+  </header>
 
-<li><a href="index.html" class="back-link">Retour à l'index</a></li>
-
-  </ul>
+  <main>
+    <ul>
+      <li class="presentation"><a href="presentation.html">Présentation</a></li>
+      <li class="chapitre"><a href="chap1.html">Chapitre 1</a></li>
+      <li class="chapitre"><a href="chap2.html">Chapitre 2</a></li>
+      <li class="chapitre"><a href="chap3.html">Chapitre 3</a></li>
+      <li class="chapitre"><a href="chap4.html">Chapitre 4</a></li>
+      <li class="chapitre"><a href="chap5.html">Chapitre 5</a></li>
+      <li class="chapitre"><a href="chap6.html">Chapitre 6</a></li>
+      <li class="chapitre"><a href="chap7.html">Chapitre 7</a></li>
+      <li class="chapitre"><a href="chap8.html">Chapitre 8</a></li>
+      <li class="chapitre"><a href="chap9.html">Chapitre 9</a></li>
+      <li class="chapitre"><a href="chap10.html">Chapitre 10</a></li>
+      <li class="chapitre"><a href="chap11.html">Chapitre 11</a></li>
+      <li class="chapitre"><a href="chap12.html">Chapitre 12</a></li>
+      <li class="chapitre"><a href="chap13.html">Chapitre 13</a></li>
+      <li><a href="../index.html" class="back-link">⬅️ Retour à l'accueil</a></li>
+    </ul>
+  </main>
 </body>
 </html>

@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
   <style>
+    
     .lightbox a.prev,
 .lightbox a.next {
   position: absolute;
@@ -166,8 +167,47 @@
     }
   </style>
 </head>
+<script>
+  const totalImages = 37;
+  let currentIndex = 1;
+
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const prevBtn = document.getElementById("prev");
+  const nextBtn = document.getElementById("next");
+
+  // Ouvrir la lightbox
+  document.querySelectorAll(".miniature-link").forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      currentIndex = parseInt(link.dataset.index);
+      updateLightbox();
+    });
+  });
+
+  function updateLightbox() {
+    lightboxImg.src = `vignettes/vignette${currentIndex}.png`;
+    lightboxImg.alt = `Vignette ${currentIndex}`;
+    prevBtn.href = "#lightbox";
+    nextBtn.href = "#lightbox";
+  }
+
+  // Navigation
+  prevBtn.addEventListener("click", e => {
+    e.preventDefault();
+    currentIndex = currentIndex > 1 ? currentIndex - 1 : totalImages;
+    updateLightbox();
+  });
+
+  nextBtn.addEventListener("click", e => {
+    e.preventDefault();
+    currentIndex = currentIndex < totalImages ? currentIndex + 1 : 1;
+    updateLightbox();
+  });
+</script>
 
 <body id="top">
+  
 
   <h1>✦ WEBTOON ✦</h1>
 
@@ -214,43 +254,44 @@
   <a href="#img37"><img class="miniature" src="vignettes/vignette37.png" alt="Vignette 37"></a>
 </div>
 
-<div id="img1" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette1.png" alt=""></div>
-<div id="img2" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette2.png" alt=""></div>
-<div id="img3" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette3.png" alt=""></div>
-<div id="img4" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette4.png" alt=""></div>
-<div id="img5" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette5.png" alt=""></div>
-<div id="img6" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette6.png" alt=""></div>
-<div id="img7" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette7.png" alt=""></div>
-<div id="img8" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette8.png" alt=""></div>
-<div id="img9" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette9.png" alt=""></div>
-<div id="img10" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette10.png" alt=""></div>
-<div id="img11" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette11.png" alt=""></div>
-<div id="img12" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette12.png" alt=""></div>
-<div id="img13" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette13.png" alt=""></div>
-<div id="img14" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette14.png" alt=""></div>
-<div id="img15" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette15.png" alt=""></div>
-<div id="img16" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette16.png" alt=""></div>
-<div id="img17" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette17.png" alt=""></div>
-<div id="img18" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette18.png" alt=""></div>
-<div id="img19" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette19.png" alt=""></div>
-<div id="img20" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette20.png" alt=""></div>
-<div id="img21" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette21.png" alt=""></div>
-<div id="img22" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette22.png" alt=""></div>
-<div id="img23" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette23.png" alt=""></div>
-<div id="img24" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette24.png" alt=""></div>
-<div id="img25" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette25.png" alt=""></div>
-<div id="img26" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette26.png" alt=""></div>
-<div id="img27" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette27.png" alt=""></div>
-<div id="img28" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette28.png" alt=""></div>
-<div id="img29" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette29.png" alt=""></div>
-<div id="img30" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette30.png" alt=""></div>
-<div id="img31" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette31.png" alt=""></div>
-<div id="img32" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette32.png" alt=""></div>
-<div id="img33" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette33.png" alt=""></div>
-<div id="img34" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette34.png" alt=""></div>
-<div id="img35" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette35.png" alt=""></div>
-<div id="img36" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette36.png" alt=""></div>
-<div id="img37" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette37.png" alt=""></div>
+<a href="#lightbox" class="miniature-link" data-index="1"><img class="miniature" src="vignettes/vignette1.png" alt="Vignette 1"></a>
+<a href="#lightbox" class="miniature-link" data-index="2"><img class="miniature" src="vignettes/vignette2.png" alt="Vignette 2"></a>
+<a href="#lightbox" class="miniature-link" data-index="3"><img class="miniature" src="vignettes/vignette3.png" alt="Vignette 3"></a>
+<a href="#lightbox" class="miniature-link" data-index="4"><img class="miniature" src="vignettes/vignette4.png" alt="Vignette 4"></a>
+<a href="#lightbox" class="miniature-link" data-index="5"><img class="miniature" src="vignettes/vignette5.png" alt="Vignette 5"></a>
+<a href="#lightbox" class="miniature-link" data-index="6"><img class="miniature" src="vignettes/vignette6.png" alt="Vignette 6"></a>
+<a href="#lightbox" class="miniature-link" data-index="7"><img class="miniature" src="vignettes/vignette7.png" alt="Vignette 7"></a>
+<a href="#lightbox" class="miniature-link" data-index="8"><img class="miniature" src="vignettes/vignette8.png" alt="Vignette 8"></a>
+<a href="#lightbox" class="miniature-link" data-index="9"><img class="miniature" src="vignettes/vignette9.png" alt="Vignette 9"></a>
+<a href="#lightbox" class="miniature-link" data-index="10"><img class="miniature" src="vignettes/vignette10.png" alt="Vignette 10"></a>
+<a href="#lightbox" class="miniature-link" data-index="11"><img class="miniature" src="vignettes/vignette11.png" alt="Vignette 11"></a>
+<a href="#lightbox" class="miniature-link" data-index="12"><img class="miniature" src="vignettes/vignette12.png" alt="Vignette 12"></a>
+<a href="#lightbox" class="miniature-link" data-index="13"><img class="miniature" src="vignettes/vignette13.png" alt="Vignette 13"></a>
+<a href="#lightbox" class="miniature-link" data-index="14"><img class="miniature" src="vignettes/vignette14.png" alt="Vignette 14"></a>
+<a href="#lightbox" class="miniature-link" data-index="15"><img class="miniature" src="vignettes/vignette15.png" alt="Vignette 15"></a>
+<a href="#lightbox" class="miniature-link" data-index="16"><img class="miniature" src="vignettes/vignette16.png" alt="Vignette 16"></a>
+<a href="#lightbox" class="miniature-link" data-index="17"><img class="miniature" src="vignettes/vignette17.png" alt="Vignette 17"></a>
+<a href="#lightbox" class="miniature-link" data-index="18"><img class="miniature" src="vignettes/vignette18.png" alt="Vignette 18"></a>
+<a href="#lightbox" class="miniature-link" data-index="19"><img class="miniature" src="vignettes/vignette19.png" alt="Vignette 19"></a>
+<a href="#lightbox" class="miniature-link" data-index="20"><img class="miniature" src="vignettes/vignette20.png" alt="Vignette 20"></a>
+<a href="#lightbox" class="miniature-link" data-index="21"><img class="miniature" src="vignettes/vignette21.png" alt="Vignette 21"></a>
+<a href="#lightbox" class="miniature-link" data-index="22"><img class="miniature" src="vignettes/vignette22.png" alt="Vignette 22"></a>
+<a href="#lightbox" class="miniature-link" data-index="23"><img class="miniature" src="vignettes/vignette23.png" alt="Vignette 23"></a>
+<a href="#lightbox" class="miniature-link" data-index="24"><img class="miniature" src="vignettes/vignette24.png" alt="Vignette 24"></a>
+<a href="#lightbox" class="miniature-link" data-index="25"><img class="miniature" src="vignettes/vignette25.png" alt="Vignette 25"></a>
+<a href="#lightbox" class="miniature-link" data-index="26"><img class="miniature" src="vignettes/vignette26.png" alt="Vignette 26"></a>
+<a href="#lightbox" class="miniature-link" data-index="27"><img class="miniature" src="vignettes/vignette27.png" alt="Vignette 27"></a>
+<a href="#lightbox" class="miniature-link" data-index="28"><img class="miniature" src="vignettes/vignette28.png" alt="Vignette 28"></a>
+<a href="#lightbox" class="miniature-link" data-index="29"><img class="miniature" src="vignettes/vignette29.png" alt="Vignette 29"></a>
+<a href="#lightbox" class="miniature-link" data-index="30"><img class="miniature" src="vignettes/vignette30.png" alt="Vignette 30"></a>
+<a href="#lightbox" class="miniature-link" data-index="31"><img class="miniature" src="vignettes/vignette31.png" alt="Vignette 31"></a>
+<a href="#lightbox" class="miniature-link" data-index="32"><img class="miniature" src="vignettes/vignette32.png" alt="Vignette 32"></a>
+<a href="#lightbox" class="miniature-link" data-index="33"><img class="miniature" src="vignettes/vignette33.png" alt="Vignette 33"></a>
+<a href="#lightbox" class="miniature-link" data-index="34"><img class="miniature" src="vignettes/vignette34.png" alt="Vignette 34"></a>
+<a href="#lightbox" class="miniature-link" data-index="35"><img class="miniature" src="vignettes/vignette35.png" alt="Vignette 35"></a>
+<a href="#lightbox" class="miniature-link" data-index="36"><img class="miniature" src="vignettes/vignette36.png" alt="Vignette 36"></a>
+<a href="#lightbox" class="miniature-link" data-index="37"><img class="miniature" src="vignettes/vignette37.png" alt="Vignette 37"></a>
+
 
   </div>
 

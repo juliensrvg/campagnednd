@@ -1,1 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WEBTOON</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <style>
+  .lightbox a.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 2em;
+  text-decoration: none;
+  z-index: 1000;
+  font-weight: bold;
+}
+
+.lightbox a.close:hover {
+  color: #ccc;
+}
+
+  .lightbox {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px black;
+}
+
+.lightbox:target {
+  display: flex;
+}
+
+  .galerie {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px;
+}
+
+.miniature {
+  width: 100px;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.miniature:hover {
+  transform: scale(1.05);
+}
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 4rem;
+      color: black;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    h2 {
+      font-size: 3rem;
+      color: black;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      width: 80%;
+      max-width: 800px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 30px;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    .back-link {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .back-link:hover {
+      background-color: #555;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 40px;
+    }
+
+    ul li {
+      margin: 5px 0;
+    }
+
+    ul li a {
+      text-decoration: none;
+      color: #0066cc;
+    }
+
+    ul li a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <h1>✦ WEBTOON ✦</h1>
+
+
+  <div class="content">
+    <h2 id="chapitre1">✦ Chapitre 1 ✦</h2>
+<div class="galerie">
+  <a href="#img1"><img class="miniature" src="vignettes/vignette1.png" alt="Vignette 1"></a>
+  <a href="#img2"><img class="miniature" src="vignettes/vignette2.png" alt="Vignette 2"></a>
+  <a href="#img3"><img class="miniature" src="vignettes/vignette3.png" alt="Vignette 3"></a>
+  <a href="#img4"><img class="miniature" src="vignettes/vignette4.png" alt="Vignette 4"></a>
+  <a href="#img5"><img class="miniature" src="vignettes/vignette5.png" alt="Vignette 5"></a>
+  <a href="#img6"><img class="miniature" src="vignettes/vignette6.png" alt="Vignette 6"></a>
+  <a href="#img7"><img class="miniature" src="vignettes/vignette7.png" alt="Vignette 7"></a>
+  <a href="#img8"><img class="miniature" src="vignettes/vignette8.png" alt="Vignette 8"></a>
+  <a href="#img9"><img class="miniature" src="vignettes/vignette9.png" alt="Vignette 9"></a>
+  <a href="#img10"><img class="miniature" src="vignettes/vignette10.png" alt="Vignette 10"></a>
+  <a href="#img11"><img class="miniature" src="vignettes/vignette11.png" alt="Vignette 11"></a>
+  <a href="#img12"><img class="miniature" src="vignettes/vignette12.png" alt="Vignette 12"></a>
+  <a href="#img13"><img class="miniature" src="vignettes/vignette13.png" alt="Vignette 13"></a>
+  <a href="#img14"><img class="miniature" src="vignettes/vignette14.png" alt="Vignette 14"></a>
+  <a href="#img15"><img class="miniature" src="vignettes/vignette15.png" alt="Vignette 15"></a>
+  <a href="#img16"><img class="miniature" src="vignettes/vignette16.png" alt="Vignette 16"></a>
+  <a href="#img17"><img class="miniature" src="vignettes/vignette17.png" alt="Vignette 17"></a>
+  <a href="#img18"><img class="miniature" src="vignettes/vignette18.png" alt="Vignette 18"></a>
+  <a href="#img19"><img class="miniature" src="vignettes/vignette19.png" alt="Vignette 19"></a>
+  <a href="#img20"><img class="miniature" src="vignettes/vignette20.png" alt="Vignette 20"></a>
+  <a href="#img21"><img class="miniature" src="vignettes/vignette21.png" alt="Vignette 21"></a>
+  <a href="#img22"><img class="miniature" src="vignettes/vignette22.png" alt="Vignette 22"></a>
+  <a href="#img23"><img class="miniature" src="vignettes/vignette23.png" alt="Vignette 23"></a>
+  <a href="#img24"><img class="miniature" src="vignettes/vignette24.png" alt="Vignette 24"></a>
+  <a href="#img25"><img class="miniature" src="vignettes/vignette25.png" alt="Vignette 25"></a>
+  <a href="#img26"><img class="miniature" src="vignettes/vignette26.png" alt="Vignette 26"></a>
+  <a href="#img27"><img class="miniature" src="vignettes/vignette27.png" alt="Vignette 27"></a>
+    <a href="#img28"><img class="miniature" src="vignettes/vignette28.png" alt="Vignette 28"></a>
+    <a href="#img29"><img class="miniature" src="vignettes/vignette29.png" alt="Vignette 29"></a>
+    <a href="#img30"><img class="miniature" src="vignettes/vignette30.png" alt="Vignette 30"></a>
+    <a href="#img31"><img class="miniature" src="vignettes/vignette31.png" alt="Vignette 31"></a>
+    <a href="#img32"><img class="miniature" src="vignettes/vignette32.png" alt="Vignette 32"></a>
+    <a href="#img33"><img class="miniature" src="vignettes/vignette33.png" alt="Vignette 33"></a>
+    <a href="#img34"><img class="miniature" src="vignettes/vignette34.png" alt="Vignette 34"></a>
+    <a href="#img35"><img class="miniature" src="vignettes/vignette35.png" alt="Vignette 35"></a>
+    <a href="#img36"><img class="miniature" src="vignettes/vignette36.png" alt="Vignette 36"></a>
+    <a href="#img37"><img class="miniature" src="vignettes/vignette37.png" alt="Vignette 37"></a>
+
+
+</div>
+
+<div id="img1" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette1.png" alt=""></div>
+<div id="img2" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette2.png" alt=""></div>
+<div id="img3" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette3.png" alt=""></div>
+<div id="img4" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette4.png" alt=""></div>
+<div id="img5" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette5.png" alt=""></div>
+<div id="img6" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette6.png" alt=""></div>
+<div id="img7" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette7.png" alt=""></div>
+<div id="img8" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette8.png" alt=""></div>
+<div id="img9" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette9.png" alt=""></div>
+<div id="img10" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette10.png" alt=""></div>
+<div id="img11" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette11.png" alt=""></div>
+<div id="img12" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette12.png" alt=""></div>
+<div id="img13" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette13.png" alt=""></div>
+<div id="img14" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette14.png" alt=""></div>
+<div id="img15" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette15.png" alt=""></div>
+<div id="img16" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette16.png" alt=""></div>
+<div id="img17" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette17.png" alt=""></div>
+<div id="img18" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette18.png" alt=""></div>
+<div id="img19" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette19.png" alt=""></div>
+<div id="img20" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette20.png" alt=""></div>
+<div id="img21" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette21.png" alt=""></div>
+<div id="img22" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette22.png" alt=""></div>
+<div id="img23" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette23.png" alt=""></div>
+<div id="img24" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette24.png" alt=""></div>
+<div id="img25" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette25.png" alt=""></div>
+<div id="img26" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette26.png" alt=""></div>
+<div id="img27" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette27.png" alt=""></div>
+<div id="img28" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette28.png" alt=""></div>
+<div id="img29" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette29.png" alt=""></div>
+<div id="img30" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette30.png" alt=""></div>
+<div id="img31" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette31.png" alt=""></div>
+<div id="img32" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette32.png" alt=""></div>
+<div id="img33" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette33.png" alt=""></div>
+<div id="img34" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette34.png" alt=""></div>
+<div id="img35" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette35.png" alt=""></div>
+<div id="img36" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette36.png" alt=""></div>
+<div id="img37" class="lightbox"><a href="#" class="close">✖</a><img src="vignettes/vignette37.png" alt=""></div>
+
+  </div>
+
+  <ul>
+
+  </ul>
+
+  <a href="#top" class="back-link">Revenir en haut</a>
+  <a href="index.html" class="back-link">Retour à l'index</a>
+
+</body>
+</html>
 

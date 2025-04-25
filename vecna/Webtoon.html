@@ -227,9 +227,9 @@ function updateLightbox() {
 }
 
  // Navigation →
-nextBtn.addEventListener("click", e => {
+prevBtn.addEventListener("click", e => {
   e.preventDefault();
-  currentIndex = currentIndex < totalImages ? currentIndex + 1 : 1;
+  currentIndex = currentIndex > 1 ? currentIndex - 1 : totalImages;
   updateLightbox();
 });
 

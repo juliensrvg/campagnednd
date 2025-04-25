@@ -181,41 +181,49 @@
   <a href="index.html" class="back-link">Retour à l'index</a>
 
   <script>
-    const totalImages = 37;
-    let currentIndex = 1;
+  const totalImages = 37;
+  let currentIndex = 1;
 
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightbox-img");
-    const prevBtn = document.getElementById("prev");
-    const nextBtn = document.getElementById("next");
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const prevBtn = document.getElementById("prev");
+  const nextBtn = document.getElementById("next");
 
-    document.querySelectorAll(".miniature-link").forEach(link => {
-      link.addEventListener("click", e => {
-        e.preventDefault();
-        currentIndex = parseInt(link.dataset.index);
-        updateLightbox();
-      });
-    });
-
-    function updateLightbox() {
-      lightboxImg.src = `vignettes/vignette${currentIndex}.png`;
-      lightboxImg.alt = `Vignette ${currentIndex}`;
-      prevBtn.href = "#lightbox";
-      nextBtn.href = "#lightbox";
-    }
-
-    prevBtn.addEventListener("click", e => {
+  // Ouvrir la lightbox
+  document.querySelectorAll(".miniature-link").forEach(link => {
+    link.addEventListener("click", e => {
       e.preventDefault();
-      currentIndex = currentIndex > 1 ? currentIndex - 1 : totalImages;
+      currentIndex = parseInt(link.dataset.index);
       updateLightbox();
+      lightbox.style.display = "flex"; // <<< AJOUT POUR FORCER l'ouverture
     });
+  });
 
-    nextBtn.addEventListener("click", e => {
-      e.preventDefault();
-      currentIndex = currentIndex < totalImages ? currentIndex + 1 : 1;
-      updateLightbox();
-    });
-  </script>
+  // Fermer la lightbox quand on clique sur ✖
+  document.querySelector(".close").addEventListener("click", e => {
+    e.preventDefault();
+    lightbox.style.display = "none";
+  });
+
+  function updateLightbox() {
+    lightboxImg.src = `vignettes/vignette${currentIndex}.png`;
+    lightboxImg.alt = `Vignette ${currentIndex}`;
+  }
+
+  // Navigation ←
+  prevBtn.addEventListener("click", e => {
+    e.preventDefault();
+    currentIndex = currentIndex > 1 ? currentIndex - 1 : totalImages;
+    updateLightbox();
+  });
+
+  // Navigation →
+  nextBtn.addEventListener("click", e => {
+    e.preventDefault();
+    currentIndex = currentIndex < totalImages ? currentIndex + 1 : 1;
+    updateLightbox();
+  });
+</script>
 
 </body>
 </html>

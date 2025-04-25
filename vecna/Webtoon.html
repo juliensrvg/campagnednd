@@ -70,13 +70,16 @@
     }
     .lightbox:target {
       display: flex;
+
     }
     .lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 10px;
-      box-shadow: 0 0 20px black;
-    }
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px black;
+  transition: opacity 0.5s ease; 
+  opacity: 1; 
+}
     .lightbox a.close {
       position: absolute;
       top: 20px;
@@ -205,10 +208,21 @@
     lightbox.style.display = "none";
   });
 
-  function updateLightbox() {
+function updateLightbox() {
+  // Commence par rendre l'image transparente
+  lightboxImg.style.opacity = 0;
+
+  // Attend un peu pour changer l'image (le temps que l'opacité tombe à 0)
+  setTimeout(() => {
     lightboxImg.src = `vignettes/vignette${currentIndex}.png`;
     lightboxImg.alt = `Vignette ${currentIndex}`;
-  }
+
+    // Quand la nouvelle image est chargée, la faire apparaître en fondu
+    lightboxImg.onload = () => {
+      lightboxImg.style.opacity = 1;
+    };
+  }, 200); // 200 millisecondes de transition
+}
 
   // Navigation ←
   prevBtn.addEventListener("click", e => {

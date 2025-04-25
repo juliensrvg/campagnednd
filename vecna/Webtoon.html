@@ -225,13 +225,20 @@ function updateLightbox() {
     };
   }, 200);
 }
-
- // Navigation →
+// Navigation ←
 prevBtn.addEventListener("click", e => {
   e.preventDefault();
   currentIndex = currentIndex > 1 ? currentIndex - 1 : totalImages;
   updateLightbox();
 });
+
+// Navigation →
+nextBtn.addEventListener("click", e => {
+  e.preventDefault();
+  currentIndex = currentIndex < totalImages ? currentIndex + 1 : 1;
+  updateLightbox();
+});
+
 
 // Fermer la lightbox si on clique en dehors de l'image
 lightbox.addEventListener("click", e => {

@@ -5,93 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WEBTOON</title>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-
   <style>
-    
-    .lightbox a.prev,
-.lightbox a.next {
-  position: absolute;
-  top: 50%;
-  font-size: 3em;
-  color: white;
-  text-decoration: none;
-  padding: 0 20px;
-  transform: translateY(-50%);
-  z-index: 1000;
-}
-
-.lightbox a.prev:hover,
-.lightbox a.next:hover {
-  color: #ccc;
-}
-
-.lightbox a.prev {
-  left: 10px;
-}
-
-.lightbox a.next {
-  right: 10px;
-}
-
-  .lightbox a.close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  color: white;
-  font-size: 2em;
-  text-decoration: none;
-  z-index: 1000;
-  font-weight: bold;
-}
-
-.lightbox a.close:hover {
-  color: #ccc;
-}
-
-  .lightbox {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.8);
-  justify-content: center;
-  align-items: center;
-}
-
-.lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
-  box-shadow: 0 0 20px black;
-}
-
-.lightbox:target {
-  display: flex;
-}
-
-  .galerie {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-  padding: 20px;
-}
-
-.miniature {
-  width: 100px;
-  height: auto;
-  border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.miniature:hover {
-  transform: scale(1.05);
-}
-
     body {
       font-family: 'Open Sans', sans-serif;
       background-color: #f4f4f4;
@@ -101,21 +15,18 @@
       flex-direction: column;
       align-items: center;
     }
-
     h1 {
       font-size: 4rem;
       color: black;
       text-align: center;
       margin-top: 50px;
     }
-
     h2 {
       font-size: 3rem;
       color: black;
       text-align: center;
       margin-top: 50px;
     }
-
     .content {
       background-color: white;
       padding: 20px;
@@ -128,11 +39,72 @@
       line-height: 1.6;
       color: #333;
     }
-
-    p {
-      margin-bottom: 20px;
+    .galerie {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      padding: 20px;
     }
-
+    .miniature {
+      width: 100px;
+      height: auto;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .miniature:hover {
+      transform: scale(1.05);
+    }
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+    .lightbox:target {
+      display: flex;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px black;
+    }
+    .lightbox a.close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 2em;
+      text-decoration: none;
+      z-index: 1000;
+      font-weight: bold;
+    }
+    .lightbox a.close:hover {
+      color: #ccc;
+    }
+    .lightbox a.prev, .lightbox a.next {
+      position: absolute;
+      top: 50%;
+      font-size: 3em;
+      color: white;
+      text-decoration: none;
+      padding: 0 20px;
+      transform: translateY(-50%);
+      z-index: 1000;
+    }
+    .lightbox a.prev:hover, .lightbox a.next:hover {
+      color: #ccc;
+    }
+    .lightbox a.prev { left: 10px; }
+    .lightbox a.next { right: 10px; }
     .back-link {
       margin-top: 20px;
       display: inline-block;
@@ -142,119 +114,21 @@
       text-decoration: none;
       border-radius: 5px;
     }
-
     .back-link:hover {
       background-color: #555;
     }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      margin-top: 40px;
-    }
-
-    ul li {
-      margin: 5px 0;
-    }
-
-    ul li a {
-      text-decoration: none;
-      color: #0066cc;
-    }
-
-    ul li a:hover {
-      text-decoration: underline;
-    }
   </style>
 </head>
-<script>
-  const totalImages = 37;
-  let currentIndex = 1;
-
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightbox-img");
-  const prevBtn = document.getElementById("prev");
-  const nextBtn = document.getElementById("next");
-
-  // Ouvrir la lightbox
-  document.querySelectorAll(".miniature-link").forEach(link => {
-    link.addEventListener("click", e => {
-      e.preventDefault();
-      currentIndex = parseInt(link.dataset.index);
-      updateLightbox();
-    });
-  });
-
-  function updateLightbox() {
-    lightboxImg.src = `vignettes/vignette${currentIndex}.png`;
-    lightboxImg.alt = `Vignette ${currentIndex}`;
-    prevBtn.href = "#lightbox";
-    nextBtn.href = "#lightbox";
-  }
-
-  // Navigation
-  prevBtn.addEventListener("click", e => {
-    e.preventDefault();
-    currentIndex = currentIndex > 1 ? currentIndex - 1 : totalImages;
-    updateLightbox();
-  });
-
-  nextBtn.addEventListener("click", e => {
-    e.preventDefault();
-    currentIndex = currentIndex < totalImages ? currentIndex + 1 : 1;
-    updateLightbox();
-  });
-</script>
 
 <body id="top">
-  
 
   <h1>✦ WEBTOON ✦</h1>
 
-
   <div class="content">
     <h2 id="chapitre1">✦ Chapitre 1 ✦</h2>
-<div class="galerie"><div class="galerie">
-  <a href="#img1"><img class="miniature" src="vignettes/vignette1.png" alt="Vignette 1"></a>
-  <a href="#img2"><img class="miniature" src="vignettes/vignette2.png" alt="Vignette 2"></a>
-  <a href="#img3"><img class="miniature" src="vignettes/vignette3.png" alt="Vignette 3"></a>
-  <a href="#img4"><img class="miniature" src="vignettes/vignette4.png" alt="Vignette 4"></a>
-  <a href="#img5"><img class="miniature" src="vignettes/vignette5.png" alt="Vignette 5"></a>
-  <a href="#img6"><img class="miniature" src="vignettes/vignette6.png" alt="Vignette 6"></a>
-  <a href="#img7"><img class="miniature" src="vignettes/vignette7.png" alt="Vignette 7"></a>
-  <a href="#img8"><img class="miniature" src="vignettes/vignette8.png" alt="Vignette 8"></a>
-  <a href="#img9"><img class="miniature" src="vignettes/vignette9.png" alt="Vignette 9"></a>
-  <a href="#img10"><img class="miniature" src="vignettes/vignette10.png" alt="Vignette 10"></a>
-  <a href="#img11"><img class="miniature" src="vignettes/vignette11.png" alt="Vignette 11"></a>
-  <a href="#img12"><img class="miniature" src="vignettes/vignette12.png" alt="Vignette 12"></a>
-  <a href="#img13"><img class="miniature" src="vignettes/vignette13.png" alt="Vignette 13"></a>
-  <a href="#img14"><img class="miniature" src="vignettes/vignette14.png" alt="Vignette 14"></a>
-  <a href="#img15"><img class="miniature" src="vignettes/vignette15.png" alt="Vignette 15"></a>
-  <a href="#img16"><img class="miniature" src="vignettes/vignette16.png" alt="Vignette 16"></a>
-  <a href="#img17"><img class="miniature" src="vignettes/vignette17.png" alt="Vignette 17"></a>
-  <a href="#img18"><img class="miniature" src="vignettes/vignette18.png" alt="Vignette 18"></a>
-  <a href="#img19"><img class="miniature" src="vignettes/vignette19.png" alt="Vignette 19"></a>
-  <a href="#img20"><img class="miniature" src="vignettes/vignette20.png" alt="Vignette 20"></a>
-  <a href="#img21"><img class="miniature" src="vignettes/vignette21.png" alt="Vignette 21"></a>
-  <a href="#img22"><img class="miniature" src="vignettes/vignette22.png" alt="Vignette 22"></a>
-  <a href="#img23"><img class="miniature" src="vignettes/vignette23.png" alt="Vignette 23"></a>
-  <a href="#img24"><img class="miniature" src="vignettes/vignette24.png" alt="Vignette 24"></a>
-  <a href="#img25"><img class="miniature" src="vignettes/vignette25.png" alt="Vignette 25"></a>
-  <a href="#img26"><img class="miniature" src="vignettes/vignette26.png" alt="Vignette 26"></a>
-  <a href="#img27"><img class="miniature" src="vignettes/vignette27.png" alt="Vignette 27"></a>
-  <a href="#img28"><img class="miniature" src="vignettes/vignette28.png" alt="Vignette 28"></a>
-  <a href="#img29"><img class="miniature" src="vignettes/vignette29.png" alt="Vignette 29"></a>
-  <a href="#img30"><img class="miniature" src="vignettes/vignette30.png" alt="Vignette 30"></a>
-  <a href="#img31"><img class="miniature" src="vignettes/vignette31.png" alt="Vignette 31"></a>
-  <a href="#img32"><img class="miniature" src="vignettes/vignette32.png" alt="Vignette 32"></a>
-  <a href="#img33"><img class="miniature" src="vignettes/vignette33.png" alt="Vignette 33"></a>
-  <a href="#img34"><img class="miniature" src="vignettes/vignette34.png" alt="Vignette 34"></a>
-  <a href="#img35"><img class="miniature" src="vignettes/vignette35.png" alt="Vignette 35"></a>
-  <a href="#img36"><img class="miniature" src="vignettes/vignette36.png" alt="Vignette 36"></a>
-  <a href="#img37"><img class="miniature" src="vignettes/vignette37.png" alt="Vignette 37"></a>
-</div>
 
-<a href="#lightbox" class="miniature-link" data-index="1"><img class="miniature" src="vignettes/vignette1.png" alt="Vignette 1"></a>
+    <div class="galerie">
+    <a href="#lightbox" class="miniature-link" data-index="1"><img class="miniature" src="vignettes/vignette1.png" alt="Vignette 1"></a>
 <a href="#lightbox" class="miniature-link" data-index="2"><img class="miniature" src="vignettes/vignette2.png" alt="Vignette 2"></a>
 <a href="#lightbox" class="miniature-link" data-index="3"><img class="miniature" src="vignettes/vignette3.png" alt="Vignette 3"></a>
 <a href="#lightbox" class="miniature-link" data-index="4"><img class="miniature" src="vignettes/vignette4.png" alt="Vignette 4"></a>
@@ -292,16 +166,56 @@
 <a href="#lightbox" class="miniature-link" data-index="36"><img class="miniature" src="vignettes/vignette36.png" alt="Vignette 36"></a>
 <a href="#lightbox" class="miniature-link" data-index="37"><img class="miniature" src="vignettes/vignette37.png" alt="Vignette 37"></a>
 
-
+    </div>
   </div>
 
-  <ul>
-
-  </ul>
+  <!-- Lightbox unique -->
+  <div id="lightbox" class="lightbox">
+    <a href="#" class="close">✖</a>
+    <a href="#" id="prev" class="prev">←</a>
+    <img id="lightbox-img" src="" alt="">
+    <a href="#" id="next" class="next">→</a>
+  </div>
 
   <a href="#top" class="back-link">Revenir en haut</a>
   <a href="index.html" class="back-link">Retour à l'index</a>
 
+  <script>
+    const totalImages = 37;
+    let currentIndex = 1;
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const prevBtn = document.getElementById("prev");
+    const nextBtn = document.getElementById("next");
+
+    document.querySelectorAll(".miniature-link").forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        currentIndex = parseInt(link.dataset.index);
+        updateLightbox();
+      });
+    });
+
+    function updateLightbox() {
+      lightboxImg.src = `vignettes/vignette${currentIndex}.png`;
+      lightboxImg.alt = `Vignette ${currentIndex}`;
+      prevBtn.href = "#lightbox";
+      nextBtn.href = "#lightbox";
+    }
+
+    prevBtn.addEventListener("click", e => {
+      e.preventDefault();
+      currentIndex = currentIndex > 1 ? currentIndex - 1 : totalImages;
+      updateLightbox();
+    });
+
+    nextBtn.addEventListener("click", e => {
+      e.preventDefault();
+      currentIndex = currentIndex < totalImages ? currentIndex + 1 : 1;
+      updateLightbox();
+    });
+  </script>
+
 </body>
 </html>
-

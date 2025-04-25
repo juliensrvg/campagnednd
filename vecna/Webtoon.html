@@ -251,8 +251,11 @@ document.addEventListener("keydown", e => {
   if (lightbox.style.display === "flex") { // seulement si la lightbox est ouverte
     if (e.key === "ArrowLeft") {
       // Flèche gauche : image précédente
-      currentIndex = currentIndex > 1 ? currentIndex - 1 : totalImages;
-      updateLightbox();
+     lightbox.addEventListener("click", e => {
+  if (e.target === lightbox || e.target === lightboxImg) {
+    lightbox.style.display = "none";
+  }
+});
     }
     if (e.key === "ArrowRight") {
       // Flèche droite : image suivante

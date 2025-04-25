@@ -72,13 +72,14 @@
       display: flex;
 
     }
-    .lightbox img {
+.lightbox img {
   max-width: 90%;
   max-height: 90%;
   border-radius: 10px;
   box-shadow: 0 0 20px black;
-  transition: opacity 0.5s ease; 
-  opacity: 1; 
+  transition: opacity 0.5s ease, transform 0.5s ease; 
+  opacity: 1;
+  transform: scale(0.95); 
 }
     .lightbox a.close {
       position: absolute;
@@ -209,34 +210,54 @@
   });
 
 function updateLightbox() {
-  // Commence par rendre l'image transparente
+  // Commence par rendre l'image transparente et réduite
   lightboxImg.style.opacity = 0;
+  lightboxImg.style.transform = "scale(0.95)";
 
-  // Attend un peu pour changer l'image (le temps que l'opacité tombe à 0)
   setTimeout(() => {
     lightboxImg.src = `vignettes/vignette${currentIndex}.png`;
     lightboxImg.alt = `Vignette ${currentIndex}`;
 
-    // Quand la nouvelle image est chargée, la faire apparaître en fondu
     lightboxImg.onload = () => {
+      // Quand la nouvelle image est prête :
       lightboxImg.style.opacity = 1;
+      lightboxImg.style.transform = "scale(1)"; // 🔥 zoom doux à l'apparition
     };
-  }, 200); // 200 millisecondes de transition
+  }, 200);
 }
 
-  // Navigation ←
-  prevBtn.addEventListener("click", e => {
-    e.preventDefault();
-    currentIndex = currentIndex > 1 ? currentIndex - 1 : totalImages;
-    updateLightbox();
-  });
+ // Navigation →
+nextBtn.addEventListener("click", e => {
+  e.preventDefault();
+  currentIndex = currentIndex < totalImages ? currentIndex + 1 : 1;
+  updateLightbox();
+});
 
-  // Navigation →
-  nextBtn.addEventListener("click", e => {
-    e.preventDefault();
-    currentIndex = currentIndex < totalImages ? currentIndex + 1 : 1;
-    updateLightbox();
-  });
+// Fermer la lightbox si on clique en dehors de l'image
+lightbox.addEventListener("click", e => {
+  if (e.target === lightbox) {
+    lightbox.style.display = "none";
+  }
+});
+// Navigation au clavier
+document.addEventListener("keydown", e => {
+  if (lightbox.style.display === "flex") { // seulement si la lightbox est ouverte
+    if (e.key === "ArrowLeft") {
+      // Flèche gauche : image précédente
+      currentIndex = currentIndex > 1 ? currentIndex - 1 : totalImages;
+      updateLightbox();
+    }
+    if (e.key === "ArrowRight") {
+      // Flèche droite : image suivante
+      currentIndex = currentIndex < totalImages ? currentIndex + 1 : 1;
+      updateLightbox();
+    }
+    if (e.key === "Escape") {
+      // Touche Échap : fermer la lightbox
+      lightbox.style.display = "none";
+    }
+  }
+});
 </script>
 
 </body>

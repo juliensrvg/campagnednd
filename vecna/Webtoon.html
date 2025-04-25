@@ -68,6 +68,7 @@
       justify-content: center;
       align-items: center;
     }
+    
     .lightbox:target {
       display: flex;
 
@@ -121,6 +122,15 @@
     .back-link:hover {
       background-color: #555;
     }
+    #counter {
+  color: white;
+  font-size: 1.5em;
+  margin-top: 10px;
+  text-align: center;
+  position: absolute;
+  bottom: 30px;
+}
+
   </style>
 </head>
 
@@ -174,12 +184,14 @@
   </div>
 
   <!-- Lightbox unique -->
-  <div id="lightbox" class="lightbox">
-    <a href="#" class="close">✖</a>
-    <a href="#" id="prev" class="prev">←</a>
-    <img id="lightbox-img" src="" alt="">
-    <a href="#" id="next" class="next">→</a>
-  </div>
+ <div id="lightbox" class="lightbox">
+  <a href="#" class="close">✖</a>
+  <a href="#" id="prev" class="prev">←</a>
+  <img id="lightbox-img" src="" alt="">
+  <div id="counter"></div> 
+  <a href="#" id="next" class="next">→</a>
+</div>
+
 
   <a href="#top" class="back-link">Revenir en haut</a>
   <a href="index.html" class="back-link">Retour à l'index</a>
@@ -210,7 +222,6 @@
   });
 
 function updateLightbox() {
-  // Commence par rendre l'image transparente et réduite
   lightboxImg.style.opacity = 0;
   lightboxImg.style.transform = "scale(0.95)";
 
@@ -219,12 +230,15 @@ function updateLightbox() {
     lightboxImg.alt = `Vignette ${currentIndex}`;
 
     lightboxImg.onload = () => {
-      // Quand la nouvelle image est prête :
       lightboxImg.style.opacity = 1;
-      lightboxImg.style.transform = "scale(1)"; // 🔥 zoom doux à l'apparition
+      lightboxImg.style.transform = "scale(1)";
     };
+
+    // ✨ Mettre à jour le compteur ici
+    document.getElementById("counter").textContent = `Vignette ${currentIndex} / ${totalImages}`;
   }, 200);
 }
+
 // Navigation ←
 prevBtn.addEventListener("click", e => {
   e.preventDefault();
@@ -251,11 +265,8 @@ document.addEventListener("keydown", e => {
   if (lightbox.style.display === "flex") { // seulement si la lightbox est ouverte
     if (e.key === "ArrowLeft") {
       // Flèche gauche : image précédente
-     lightbox.addEventListener("click", e => {
-  if (e.target === lightbox || e.target === lightboxImg) {
-    lightbox.style.display = "none";
-  }
-});
+      currentIndex = currentIndex > 1 ? currentIndex - 1 : totalImages;
+      updateLightbox();
     }
     if (e.key === "ArrowRight") {
       // Flèche droite : image suivante

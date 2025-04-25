@@ -7,6 +7,31 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
   <style>
+    .lightbox a.prev,
+.lightbox a.next {
+  position: absolute;
+  top: 50%;
+  font-size: 3em;
+  color: white;
+  text-decoration: none;
+  padding: 0 20px;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+.lightbox a.prev:hover,
+.lightbox a.next:hover {
+  color: #ccc;
+}
+
+.lightbox a.prev {
+  left: 10px;
+}
+
+.lightbox a.next {
+  right: 10px;
+}
+
   .lightbox a.close {
   position: absolute;
   top: 20px;

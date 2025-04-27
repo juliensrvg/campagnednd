@@ -82,22 +82,25 @@
       margin: 10px auto;
     }
 
-    .back-to-top, .back-link {
-      display: block;
-      text-align: center;
-      margin: 30px auto;
-      font-size: 1.2em;
-      text-decoration: none;
-      color: #0077cc;
-    }
+   .back-to-top, .back-link {
+  display: inline-block;
+  margin: 20px;
+  padding: 10px 20px;
+  background: linear-gradient(145deg, #6a11cb 0%, #2575fc 100%);
+  color: white;
+  border-radius: 50px;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
 
-    .back-to-top:hover, .back-link:hover {
-      text-decoration: underline;
-    }
+.back-to-top:hover, .back-link:hover {
+  transform: translateY(-5px);
+}
 
-
-
-          .buttons-container {
+    .buttons-container {
   text-align: center;
   margin-top: 40px;
 }
@@ -162,8 +165,10 @@
 
   </section>
 
+<div class="buttons-container">
   <a href="#top" class="back-to-top">⬆️ Revenir en haut</a>
   <a href="index.html" class="back-link">⬅️ Retour à l'index</a>
+</div>
 
 </main>
 

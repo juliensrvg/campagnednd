@@ -42,6 +42,30 @@
       margin: 10px 0;
       text-align: justify;
     }
+    .back-to-top, .back-link {
+  display: inline-block;
+  margin: 20px;
+  padding: 12px 24px;
+  background-color: #222;
+  color: #f0f0f0;
+  border: 2px solid #44ccff;
+  border-radius: 12px;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 0 8px #44ccff;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.back-to-top:hover, .back-link:hover {
+  background-color: #44ccff;
+  color: #222;
+  box-shadow: 0 0 20px #44ccff;
+}
+.buttons-container {
+  text-align: center;
+  margin-top: 40px;
+}
   </style>
 </head>
 <body>
@@ -82,6 +106,11 @@
 </section>
 
 </main>
+
+<div class="buttons-container">
+  <a href="#top" class="back-to-top">⬆️ Revenir en haut</a>
+  <a href="index.html" class="back-link">⬅️ Retour à l'index</a>
+</div>
 
 </body>
 </html>

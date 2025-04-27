@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -6,27 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Histoire Récente de Faerûn</title>
   <style>
-      .back-to-top {
-    display: inline-block;
-    padding: 8px 12px;
-    border: 2px solid #444;
-    border-radius: 8px;
-    background-color: #f2f2f2;
-    color: #333;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-  }
-    .encadre {
-  border: 2px solid #888;
-  padding: 15px;
-  border-radius: 8px;
-  background-color: #1e1e1e;
-  color: white;
-  max-width: 600px;
-  margin: 20px auto;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -44,7 +22,24 @@
     h1 {
       font-size: 3em;
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #0077cc;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
     }
 
     h2 {
@@ -55,8 +50,8 @@
 
     h3 {
       font-size: 1.5em;
-      margin-top: 30px;
       text-align: center;
+      margin-top: 30px;
     }
 
     p {
@@ -64,69 +59,88 @@
       max-width: 800px;
       margin: 10px auto;
     }
+
+    .back-to-top, .back-link {
+      display: block;
+      text-align: center;
+      margin: 30px auto;
+      font-size: 1.2em;
+      text-decoration: none;
+      color: #0077cc;
+    }
+
+    .back-to-top:hover, .back-link:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
-<body>
+<body id="top">
 
 <header>
   <h1>📜 Histoire Récente de Faerûn</h1>
+
+  <nav>
+    <a href="#contexte">Contexte</a> |
+    <a href="#troubles">Temps des Troubles</a> |
+    <a href="#apres">Après la Crise</a> |
+    <a href="#cote">Côte des Épées</a>
+  </nav>
 </header>
 
 <main>
 
-  <section>
-    <h2> Contexte général</h2>
+  <section id="contexte">
+    <h2>Contexte général</h2>
     <p>L’aventure se déroule au début de l’Ère des Bouleversements, plus de 100 ans avant l'époque actuelle de Faerûn. En 1368 DR, dieux et mortels s’adaptent encore aux profondes transformations issues du Temps des Troubles, survenu dix ans auparavant.</p>
   </section>
 
-  <section>
+  <section id="troubles">
     <h2>⚔️ Le Temps des Troubles</h2>
 
-    <h3> Début et causes</h3>
+    <h3>Début et causes</h3>
     <p>Le Temps des Troubles, aussi appelé la Guerre des Dieux ou la Crise de l'Avatar, débute et se termine en 1358 DR, l'Année des Ombres. Il commence lorsque Bane et Myrkul volent les Tablettes du Destin au Seigneur Ao pour réécrire la réalité.</p>
     <p>En réaction, Ao dépouille les dieux de leur immortalité et les oblige à marcher sur Toril sous forme d’avatars pour récupérer les Tablettes.</p>
 
-    <h3> Conséquences immédiates</h3>
+    <h3>Conséquences immédiates</h3>
     <p>Les avatars, bien que vulnérables, restent extrêmement puissants, et plusieurs dieux périssent. De nouveaux mortels accèdent à la divinité. Torm meurt face à Bane mais est ressuscité par Ao pour son exemplarité. Bane et Myrkul, eux, échouent et meurent définitivement.</p>
 
-    <h3>🛡 Le rôle d’Helm</h3>
+    <h3>🛡️ Le rôle d’Helm</h3>
     <p>Helm, dieu de la protection, est chargé par Ao de garder l'escalier céleste. Lors de cette mission, il tue Mystra, déesse de la magie, provoquant un isolement vis-à-vis des autres dieux.</p>
 
-    <h3> Prophéties et machinations</h3>
+    <h3>Prophéties et machinations</h3>
     <p>Alaundo le Sage avait prédit partiellement les événements du Temps des Troubles. Bhaal, pour tenter d'échapper à la mort, engendre des enfants mortels, les Rejetons de Bhaal, mais est finalement tué par Cyric, qui accède à la divinité.</p>
 
-    <h3> Impact magique</h3>
+    <h3>Impact magique</h3>
     <p>La magie divine disparaît presque complètement. La magie profane devient instable sans Mystra. Même après son retour, des zones de magie sauvage et morte persistent sur Toril.</p>
 
-    <h3> Fin des Tablettes du Destin</h3>
+    <h3>Fin des Tablettes du Destin</h3>
     <p>Après leur récupération, Ao détruit les Tablettes, ce qui rompt les lois universelles qu'elles maintenaient et marque le début officiel de l’Ère du Dérangement.</p>
   </section>
 
-  <section>
+  <section id="apres">
     <h2>⚔️ Faerûn après la crise</h2>
 
-    <h3> Guerres et chaos</h3>
+    <h3>Guerres et chaos</h3>
     <p>Le panthéon bouleversé entraîne une recrudescence des guerres et des luttes de pouvoir à travers Faerûn.</p>
 
-    <h3> Expansion et nouvelles routes commerciales</h3>
+    <h3>Expansion et nouvelles routes commerciales</h3>
     <p>Malgré les destructions, les civilisations humaines prospèrent. En 1361 DR, Amn établit un contact avec Maztica, favorisant le commerce maritime. La prospérité d’Amn et de la Porte de Baldur s'accroît fortement grâce à ces échanges.</p>
   </section>
 
-  <section>
+  <section id="cote">
     <h2>⚓ La Côte des Épées</h2>
 
-    <h3> Description générale</h3>
+    <h3>Description générale</h3>
     <p>La Côte des Épées doit son nom soit à ses nombreux dangers, soit à ses falaises blanches déchiquetées. Elle longe la mer d'Épées, entre Eauprofonde au nord et Amn au sud, chevauchant parfois la région du centre-ouest.</p>
 
-    <h3> La Porte de Baldur</h3>
+    <h3>La Porte de Baldur</h3>
     <p>La Porte de Baldur, construite autour du port de Gray Harbor alimenté par la rivière Chionthar, est devenue la ville la plus prospère de la Côte. Ancienne "terre vide", elle est aujourd'hui un phare de civilisation face aux dangers des étendues sauvages.</p>
   </section>
 
+  <a href="#top" class="back-to-top">⬆️ Revenir en haut</a>
+  <a href="index.html" class="back-link">⬅️ Retour à l'index</a>
+
 </main>
-    </div>
-<a href="#top" class="back-to-top">Revenir en haut</a>
-  <a href="index.html" class="back-link">Retour à l'index</a>
-      </div>
+
 </body>
 </html>
-

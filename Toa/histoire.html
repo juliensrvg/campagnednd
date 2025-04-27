@@ -22,7 +22,7 @@
     }
     .timeline {
       position: relative;
-      max-width: 900px;
+      max-width: 1000px;
       margin: 0 auto;
       padding: 20px 0;
     }
@@ -66,6 +66,12 @@
       left: -10px;
       right: auto;
     }
+    .edition {
+      background-color: #ffd700;
+      color: #333;
+      font-weight: bold;
+      text-align: center;
+    }
     h2 {
       font-size: 1.8em;
       margin-top: 0;
@@ -74,6 +80,24 @@
       margin: 10px 0;
       line-height: 1.5;
       text-align: justify;
+    }
+    .buttons {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .buttons a {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: #0077cc;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    .buttons a:hover {
+      background-color: #005fa3;
     }
     @media screen and (max-width: 768px) {
       .timeline::after {
@@ -90,37 +114,64 @@
     }
   </style>
 </head>
-<body>
+<body id="top">
 
 <header>
   <h1>📜 Timeline Moderne de Faerûn</h1>
 </header>
 
 <div class="timeline">
-  <div class="timeline-item left">
+
+  <div class="timeline-item left edition">
+    <h2>📘 Passage à AD&D 2</h2>
+    <p>Sortie d'AD&D 2, l'histoire avance jusqu'en 1367 CV.</p>
+  </div>
+
+  <div class="timeline-item right">
     <h2>1358 CV : Temps des Troubles</h2>
     <p>Début du bouleversement : disparition de la magie divine, instabilité de la magie profane, dieux vulnérables parmi les mortels.</p>
   </div>
 
-  <div class="timeline-item right">
+  <div class="timeline-item left">
     <h2>1374 CV : Retour du Nétheril</h2>
     <p>La cité de Thultanthar (Pénombre) réapparaît au-dessus du désert d'Anauroch, amorçant la renaissance de l'empire nétherisse.</p>
   </div>
 
-  <div class="timeline-item left">
-    <h2>1385 CV : Magepeste</h2>
-    <p>Effondrement de la Toile après l'assassinat de Mystra. Cataclysmes géographiques et magiques, fusion partielle avec Abeir.</p>
+  <div class="timeline-item right edition">
+    <h2>📘 Passage à D&D 3</h2>
+    <p>Début en 1372 CV avec l'essor du retour des empires anciens.</p>
   </div>
 
-  <div class="timeline-item right">
+  <div class="timeline-item left">
+    <h2>1385 CV : Magepeste</h2>
+    <p>Effondrement de la Toile après l'assassinat de Mystra. Chaos magique et transformation géographique majeure de Toril.</p>
+  </div>
+
+  <div class="timeline-item right edition">
+    <h2>📘 Passage à D&D 4</h2>
+    <p>Bond temporel jusqu'en 1479 CV. Un Faerûn dévasté et transformé.</p>
+  </div>
+
+  <div class="timeline-item left">
     <h2>1487 CV : La Fracture</h2>
-    <p>Éruptions, destruction de Myth Drannor, fin de la Magepeste. Le monde retrouve sa stabilité et la magie son équilibre d'antan.</p>
+    <p>Éruptions, destruction de Myth Drannor, fin de la Magepeste. Le monde retrouve sa stabilité et la magie son équilibre.</p>
+  </div>
+
+  <div class="timeline-item right edition">
+    <h2>📘 Passage à D&D 5</h2>
+    <p>Retour à un monde classique et plus stable : début de l'ère moderne en 1489 CV.</p>
   </div>
 
   <div class="timeline-item left">
     <h2>1489 CV : Stabilisation</h2>
-    <p>Fin des guerres de la Fracture, effacement des dernières traces de la Magepeste, les Royaumes Oubliés entrent dans une ère de reconstruction.</p>
+    <p>Fin des guerres de la Fracture. Les Royaumes retrouvent un équilibre politique et magique.</p>
   </div>
+
+</div>
+
+<div class="buttons">
+  <a href="#top">⬆️ Retour en haut</a>
+  <a href="../index.html">🏠 Retour à l'index</a>
 </div>
 
 </body>

@@ -63,22 +63,24 @@
 .back-to-top, .back-link {
   display: inline-block;
   margin: 20px;
-  padding: 12px 24px;
-  background-color: #222;
-  color: #f0f0f0;
-  border: 2px solid #44ccff;
-  border-radius: 12px;
+  padding: 10px 20px;
+  background: linear-gradient(145deg, #6a11cb 0%, #2575fc 100%);
+  color: white;
+  border-radius: 50px;
   font-size: 1.2em;
   font-weight: bold;
   text-decoration: none;
-  box-shadow: 0 0 8px #44ccff;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
 }
 
 .back-to-top:hover, .back-link:hover {
-  background-color: #44ccff;
-  color: #222;
-  box-shadow: 0 0 20px #44ccff;
+  transform: translateY(-5px);
+}
+
+    .buttons-container {
+  text-align: center;
+  margin-top: 40px;
 }
   </style>
 </head>
@@ -145,8 +147,10 @@
     <p>La Porte de Baldur, construite autour du port de Gray Harbor alimenté par la rivière Chionthar, est devenue la ville la plus prospère de la Côte. Ancienne "terre vide", elle est aujourd'hui un phare de civilisation face aux dangers des étendues sauvages.</p>
   </section>
 
+<div class="buttons-container">
   <a href="#top" class="back-to-top">⬆️ Revenir en haut</a>
   <a href="index.html" class="back-link">⬅️ Retour à l'index</a>
+</div>
 
 </main>
 

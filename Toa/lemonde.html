@@ -8,8 +8,8 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      color: #333;
       background-color: #f5f5f5;
+      color: #333;
     }
 
     header, main, section {
@@ -22,19 +22,36 @@
     h1 {
       font-size: 3em;
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #0077cc;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
     }
 
     h2 {
       font-size: 2em;
-      margin-top: 40px;
       text-align: center;
+      margin-top: 40px;
     }
 
     h3 {
       font-size: 1.5em;
-      margin-top: 30px;
       text-align: center;
+      margin-top: 30px;
     }
 
     p {
@@ -42,37 +59,57 @@
       max-width: 800px;
       margin: 10px auto;
     }
+
+    .back-to-top, .back-link {
+      display: block;
+      text-align: center;
+      margin: 30px auto;
+      font-size: 1.2em;
+      text-decoration: none;
+      color: #0077cc;
+    }
+
+    .back-to-top:hover, .back-link:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
-<body>
+<body id="top">
 
 <header>
   <h1>🌎 Le Monde de Toril</h1>
+  
+  <nav>
+    <a href="#univers">Univers général</a> |
+    <a href="#divinites">Divinités</a> |
+    <a href="#temps">Calendrier</a> |
+    <a href="#faerun">Faerûn</a>
+  </nav>
 </header>
 
 <main>
 
-  <section>
+  <section id="univers">
     <h2>🌎 Univers Général : Toril</h2>
     <p>Toril est une planète de magie, d’aventure et de mystère. Elle abrite de nombreuses races : humains, elfes, nains, gnomes et halfelins. Elle compte également une multitude de créatures magiques, allant du sympathique flumph au tyrannœil malveillant.</p>
     <p>Sous la surface se trouve l'Outreterre, un vaste réseau de cavernes où résident drows, duergars, svirfnebelins, flagelleurs mentaux, kuo-toa, et d’autres créatures étranges.</p>
     <p>Comme la Terre, Toril est la troisième planète orbitant autour d’un soleil jaune, Sol, et possède une lune, Selûne. Le système solaire est connu comme la Sphère des Royaumes Oubliés, flottant dans le Phlogiston, une substance primordiale du multivers.</p>
   </section>
 
-  <section>
+  <section id="divinites">
     <h2>🛐 Les Divinités</h2>
     <p>Les dieux sont omniprésents sur Toril. Certains sont distants, tandis que d'autres influencent directement les mortels par la magie divine.</p>
     <p>Les sorciers et autres lanceurs de sorts, quant à eux, puisent leur énergie dans une source magique appelée la Toile.</p>
     <p>Chaque dieu domine certains concepts ou créatures, créant alliances ou rivalités entre divinités. Tous reconnaissent l'autorité suprême du Seigneur Ao.</p>
   </section>
 
-  <section>
+  <section id="temps">
     <h2>📅 Le Temps : Calendrier des Vaux (DR)</h2>
     <p>Les années sont comptées selon le Calendrier des Vaux ("Dale Reckoning" ou DR), débutant avec l’érection de la Pierre Permanente.</p>
     <p>L’histoire décrite ici se déroule entre 1368 et 1369 DR.</p>
   </section>
 
-  <section>
+  <section id="faerun">
     <h2>🌍 Faerûn : Le Continent Principal</h2>
     
     <h3>➤ Présentation générale</h3>
@@ -96,10 +133,10 @@
 
   </section>
 
+  <a href="#top" class="back-to-top">⬆️ Revenir en haut</a>
+  <a href="index.html" class="back-link">⬅️ Retour à l'index</a>
+
 </main>
-    </div>
-<a href="#top" class="back-to-top">Revenir en haut</a>
-  <a href="index.html" class="back-link">Retour à l'index</a>
-      </div>
+
 </body>
 </html>

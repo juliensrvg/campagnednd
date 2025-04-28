@@ -6,73 +6,74 @@
   <title>Le Monde de Toril</title>
   <style>
     .accordion-button {
-      width: 100%;
-      padding: 12px;
-      font-size: 1.2em;
-      text-align: left;
-      background-color: #222;
-      color: #f0f0f0;
-      border: none;
-      border-bottom: 1px solid #444;
-      cursor: pointer;
-      outline: none;
-      transition: background-color 0.3s ease;
-    }
+  width: 100%;
+  padding: 12px;
+  font-size: 1.2em;
+  text-align: left;
+  background-color: #222;
+  color: #f0f0f0;
+  border: none;
+  border-bottom: 1px solid #444;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
 
-    .accordion-button:hover {
-      background-color: #44ccff;
-      color: #222;
-    }
+.accordion-button:hover {
+  background-color: #44ccff;
+  color: #222;
+}
 
-    .accordion-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.5s ease;
-      background-color: #333;
-      color: white;
-      padding: 0 15px;
-    }
+.accordion-content {
+  padding: 0 15px;
+  background-color: #333;
+  color: white;
+  display: none; /* caché par défaut */
+}
 
-    .accordion-content p {
-      margin: 10px 0;
-    }
+.accordion-content p {
+  margin: 10px 0;
+}
+ul {
+  column-count: 1; 
+  column-gap: 40px;
+  list-style-position: inside;
+  padding-left: 0;
+  margin-left: 1em;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+ul {
+  list-style-position: inside;
+  padding-left: 0;
+  margin-left: 1em;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
 
-    ul {
-      column-count: 1;
-      column-gap: 40px;
-      list-style-position: inside;
-      padding-left: 0;
-      margin-left: 1em;
-      font-size: 1.1em;
-      line-height: 1.6;
-    }
 
-    .back-to-top, .back-link {
-      display: inline-block;
-      margin: 20px;
-      padding: 12px 24px;
-      background-color: #222;
-      color: #f0f0f0;
-      border: 2px solid #44ccff;
-      border-radius: 12px;
-      font-size: 1.2em;
-      font-weight: bold;
-      text-decoration: none;
-      box-shadow: 0 0 8px #44ccff;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .back-to-top:hover, .back-link:hover {
-      background-color: #44ccff;
-      color: #222;
-      box-shadow: 0 0 20px #44ccff;
-    }
-
-    .buttons-container {
-      text-align: center;
-      margin-top: 40px;
-    }
-
+     .back-to-top {
+    display: inline-block;
+    padding: 8px 12px;
+    border: 2px solid #444;
+    border-radius: 8px;
+    background-color: #f2f2f2;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+    .encadre {
+  border: 2px solid #888;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #1e1e1e;
+  color: white;
+  max-width: 600px;
+  margin: 20px auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+        body {
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -122,12 +123,38 @@
       margin-top: 30px;
     }
 
-    p {
-      text-align: justify;
-      max-width: 800px;
-      margin: 10px auto;
-    }
+  p {
+  text-align: justify;
+  max-width: 800px;
+  margin: 10px auto;
+}
+
+.back-to-top, .back-link {
+  display: inline-block;
+  margin: 20px;
+  padding: 12px 24px;
+  background-color: #222;
+  color: #f0f0f0;
+  border: 2px solid #44ccff;
+  border-radius: 12px;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 0 8px #44ccff;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.back-to-top:hover, .back-link:hover {
+  background-color: #44ccff;
+  color: #222;
+  box-shadow: 0 0 20px #44ccff;
+}
+.buttons-container {
+  text-align: center;
+  margin-top: 40px;
+}
   </style>
+
 </head>
 
 <body id="top">
@@ -141,104 +168,133 @@
     <a href="#temps">Calendrier</a> |
     <a href="#faerun">Faerûn</a> |
     <a href="#La Côte des Épées">La Côte des Épées</a> |
+
   </nav>
 </header>
 
 <main>
 
   <section id="univers">
-    <h2>Univers Général : Toril</h2>
+    <h2> Univers Général : Toril</h2>
     <p>Toril est une planète de magie, d’aventure et de mystère. Elle abrite de nombreuses races : humains, elfes, nains, gnomes et halfelins. Elle compte également une multitude de créatures magiques, allant du sympathique flumph au tyrannœil malveillant.</p>
-    <p>Sous la surface se trouve l'Outreterre, un vaste réseau de cavernes peuplé de créatures étranges comme les drows et les flagelleurs mentaux.</p>
-    <p>Toril est la troisième planète orbitant autour du soleil Sol, avec sa lune Selûne. Le tout flotte dans le Phlogiston, la substance primordiale du multivers.</p>
+    <p>Sous la surface se trouve l'Outreterre, un vaste réseau de cavernes où résident drows, duergars, svirfnebelins, flagelleurs mentaux, kuo-toa, et d’autres créatures étranges.</p>
+    <p>Comme la Terre, Toril est la troisième planète orbitant autour d’un soleil jaune, Sol, et possède une lune, Selûne. Le système solaire est connu comme la Sphère des Royaumes Oubliés, flottant dans le Phlogiston, une substance primordiale du multivers.</p>
   </section>
 
   <section id="divinites">
-    <h2>Les Divinités</h2>
-    <p>Les dieux sont omniprésents sur Toril, influençant les mortels par la magie divine et les forces de la Toile. Chaque dieu règne sur certains domaines ou créatures, tissant des alliances ou des rivalités qui façonnent le monde.</p>
+    <h2> Les Divinités</h2>
+    <p>Les dieux sont omniprésents sur Toril. Certains sont distants, tandis que d'autres influencent directement les mortels par la magie divine.</p>
+    <p>Les sorciers et autres lanceurs de sorts, quant à eux, puisent leur énergie dans une source magique appelée la Toile.</p>
+    <p>Chaque dieu domine certains concepts ou créatures, créant alliances ou rivalités entre divinités. Tous reconnaissent l'autorité suprême du Seigneur Ao.</p>
   </section>
 
   <section id="temps">
     <h2>Le Temps : Calendrier des Vaux (DR)</h2>
-    <p>Les années sont comptées depuis l’érection de la Pierre Permanente, selon le Calendrier des Vaux ("Dale Reckoning" ou DR). Cette aventure se déroule entre 1489 et 1490DR.</p>
+    <p>Les années sont comptées selon le Calendrier des Vaux ("Dale Reckoning" ou DR), débutant avec l’érection de la Pierre Permanente.</p>
+    <p>L’histoire décrite ici se déroule entre 1489 et 1490DR.</p>
   </section>
 
   <section id="faerun">
-    <h2>Faerûn : Le Continent Principal</h2>
+    <h2> Faerûn : Le Continent Principal</h2>
 
-    <div style="text-align: center; margin: 30px 0;">
-      <a href="https://i.pinimg.com/originals/37/81/1a/37811a4f045a841b9c97dee4178d8ff4.jpg" target="_blank">
-        <img src="https://i.pinimg.com/originals/37/81/1a/37811a4f045a841b9c97dee4178d8ff4.jpg" alt="Carte de Faerûn" width="250">
-      </a>
-    </div>
+<div style="text-align: center; margin: 30px 0;">
+  <a href="https://i.pinimg.com/originals/37/81/1a/37811a4f045a841b9c97dee4178d8ff4.jpg" target="_blank">
+    <a href="https://i.pinimg.com/originals/37/81/1a/37811a4f045a841b9c97dee4178d8ff4.jpg" target="_blank" class="lightbox">
+  <img src="https://i.pinimg.com/originals/37/81/1a/37811a4f045a841b9c97dee4178d8ff4.jpg" alt="Carte de Faerun" width="250">
+</a>
+  </a>
 
-    <h3>Présentation générale</h3>
-    <p>Faerûn est une immense région aux climats et cultures variés. De la Côte des Épées aux jungles du Chult, les royaumes humains, les empires elfiques et les cités marchandes s’y disputent l'influence et la survie.</p>
+</div>
 
-    <h3>La Côte des Épées</h3>
-    <p>La Côte des Épées, bordée par l'océan, est l'axe vital des échanges et des aventures. Des villes comme Eauprofonde et Padhiver dominent ce littoral sauvage peuplé de créatures hostiles.</p>
-    
-    <h2>Colonisation et établissements humains</h2>
 
-    <div class="accordion">
+    <h3> Présentation générale</h3>
+    <p>Faerûn est une immense région de Toril, aux climats et cultures variés. Les nations humaines adoptent souvent un système féodal, avec des empires comme Calimshan et des cités-états comme la Porte de Baldur.</p>
+    <p>Le continent est parcouru de mers intérieures telles que la Mer des Étoiles Déchues et la Mer de Lune.</p>
 
-      <button class="accordion-button">11 Auberge de Brasamical</button>
-      <div class="accordion-content">
-        <p>Depuis plus d'un siècle, l'Auberge de Brasamical offre hospitalité et sécurité aux voyageurs de la Porte de Baldur, d'Amn et d'ailleurs. Elle est un havre de paix au milieu des terres sauvages.</p>
-      </div>
+    <h3> Nord de Faerûn</h3>
+    <p><strong>La Côte des Épées</strong> s'étend sur la façade ouest, bordée par l'océan. C’est une région dynamique et célèbre, parfaite pour l'aventure.</p>
+    <p><strong>Eauprofonde</strong>, "la Ville des splendeurs", et <strong>Padhiver</strong>, "le Joyau du Nord", en sont les cités majeures.</p>
+    <p>Plus au nord, <strong>Valbise</strong> illustre la rudesse du climat arctique. La Côte des Épées est un axe vital d’échanges et d’aventures.</p>
 
-      <button class="accordion-button">1 La Porte de Baldur</button>
-      <div class="accordion-content">
-        <p>ille portuaire emblématique, la Porte de Baldur est l'une des plus grandes et puissantes cités de Faerûn. Centre du commerce et de la politique, elle attire aventuriers et marchands du monde entier.</p>
-      </div>
+    <h3> Centre de Faerûn</h3>
+    <p>Le centre combine forêts, vallées et déserts. La <strong>Terre des Vaux</strong> regroupe de petites nations agricoles, dont <strong>Valombre</strong>, la demeure de l’archimage Elminster Aumar.</p>
+    <p>Le <strong>désert d'Anauroch</strong> s'étend au nord du centre, vestige de l’ancien Empire Nétherisse. De nombreuses nations prospères comme <strong>Cormyr</strong>, <strong>Chondath</strong> et <strong>Sembia</strong> occupent cette région.</p>
+    <p>Le <strong>Bois de Chondal</strong> est une immense forêt peuplée de fées et de druides sauvages.</p>
 
-      <button class="accordion-button">3 Bérégost</button>
-      <div class="accordion-content">
-        <p>VBérégost est une ville marchande prospère, réputée pour ses auberges accueillantes et ses artisans renommés. C'est une halte incontournable pour tout aventurier en route vers le sud.</p>
-      </div>
+    <h3> Sud de Faerûn</h3>
+    <p>Le sud est recouvert de jungles tropicales et de vastes déserts.</p>
+    <p><strong>Chult</strong>, encore relié au continent à cette époque, est dominé par la jungle dense et abrite <strong>Port Nyanzaru</strong>, une ville indépendante qui fait office de capitale.</p>
+    <p>Plus au sud, la <strong>magocratie de Halruaa</strong> préserve l'héritage des Nétherisses.</p>
 
-      <button class="accordion-button">4 Château-Suif</button>
-      <div class="accordion-content">
-        <p>Château-Suif est une forteresse-monastère renommée pour abriter l'une des plus vastes bibliothèques de Faerûn. Protégé par des moines érudits, il conserve les savoirs anciens et les prophéties d'Alaundo le Sage..</p>
-      </div>
+<section id="La Côte des Épées">
+    <h2> La Côte des Épées</h2>
+  <p>Malgré l'essor de la civilisation, la Côte des Épées reste une terre sauvage et dangereuse. Orcs, trolls, gobelins, ogres, kobolds et grouilleux attaquent fréquemment les voyageurs imprudents.</p>
+    <p>Les forêts épaisses, comme Bois-Manteau, offrent des refuges parfaits aux monstres et hors-la-loi. De nombreux aventuriers bravent pourtant ces périls en quête de gloire et de fortune.</p>
+ 
+<div style="text-align: center; margin: 30px 0;">
+  <a href="../image/cote des épées.jpg" target="_blank">
+    <a href="../image/cote des épées.jpg" target="_blank" class="lightbox">
+  <img src="../image/cote des épées.jpg" alt="Carte de la côte des épées" width="250">
+</a>
+  </a>
 
-      <button class="accordion-button">21 Nashkell</button>
-      <div class="accordion-content">
-        <p>Nashkell est un village agricole situé au sud de la Porte de Baldur, connu pour ses festivals champêtres... et pour les mines proches, souvent sujettes à des troubles mystérieux</p>
-      </div>
+</div>
 
-      <button class="accordion-button">Bois-Manteau</button>
-      <div class="accordion-content">
-        <p>Bois-Manteau est une vaste forêt dangereuse, repaire de fées malicieuses, de bandits et de bêtes monstrueuses.</p>
-      </div>
+    <h3> Colonisation et établissements humains</h3>
+    <p>Malgré les dangers, plusieurs villages et villes ont prospéré :</p>
+ 
+<div class="accordion">
 
-    </div>
-
-  </section>
-
-  <div class="buttons-container">
-    <a href="#top" class="back-to-top">⬆️ Revenir en haut</a>
-    <a href="index.html" class="back-link">⬅️ Retour à l'index</a>
+  <button class="accordion-button">11 Auberge de Brasamical</button>
+  <div class="accordion-content">
+    <p>Depuis plus d'un siècle, l'Auberge de Brasamical offre hospitalité et sécurité aux voyageurs de la Porte de Baldur, d'Amn et d'ailleurs. Elle est un havre de paix au milieu des terres sauvages.</p>
   </div>
 
+  <button class="accordion-button">1 La Porte de Baldur</button>
+  <div class="accordion-content">
+    <p>Ville portuaire emblématique, la Porte de Baldur est l'une des plus grandes et puissantes cités de Faerûn. Centre du commerce et de la politique, elle attire aventuriers et marchands du monde entier.</p>
+  </div>
+
+
+  <button class="accordion-button">3 Bérégost</button>
+  <div class="accordion-content">
+    <p>Bérégost est une ville marchande prospère, réputée pour ses auberges accueillantes et ses artisans renommés. C'est une halte incontournable pour tout aventurier en route vers le sud.</p>
+  </div>
+
+  <button class="accordion-button">4 Château-Suif</button>
+  <div class="accordion-content">
+    <p>Château-Suif est une forteresse-monastère renommée pour abriter l'une des plus vastes bibliothèques de Faerûn. Protégé par des moines érudits, il conserve les savoirs anciens et les prophéties d'Alaundo le Sage.</p>
+  </div>
+  
+   <button class="accordion-button">21 Nashkell</button>
+  <div class="accordion-content">
+    <p>Nashkell est un village agricole situé au sud de la Porte de Baldur, connu pour ses festivals champêtres... et pour les mines proches, souvent sujettes à des troubles mystérieux.</p>
+  </div>
+  
+  <button class="accordion-button"> Bois-Manteau</button>
+  <div class="accordion-content">
+    <p>Bois-Manteau est une vaste forêt dense, pleine de mystères et de dangers. Les créatures féeriques, les bandits et les monstres y trouvent refuge, défiant les voyageurs téméraires.</p>
+  </div>
+  
+</div>
+</div>
+
+   
+</section>
+
+<div class="buttons-container">
+  <a href="#top" class="back-to-top">⬆️ Revenir en haut</a>
+  <a href="index.html" class="back-link">⬅️ Retour à l'index</a>
+</div>
+
 </main>
-
-<script>
-  document.querySelectorAll('.accordion-button').forEach(button => {
-    button.addEventListener('click', () => {
-      const content = button.nextElementSibling;
-
-      if (content.style.maxHeight) {
-        content.style.maxHeight = null;
-      } else {
-        document.querySelectorAll('.accordion-content').forEach(c => {
-          c.style.maxHeight = null;
-        });
-        content.style.maxHeight = content.scrollHeight + "px";
-      }
-    });
+  <script>
+document.querySelectorAll('.accordion-button').forEach(button => {
+  button.addEventListener('click', () => {
+    const content = button.nextElementSibling;
+    content.style.display = (content.style.display === 'block') ? 'none' : 'block';
   });
+});
 </script>
-
 </body>
 </html>

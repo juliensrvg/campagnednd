@@ -5,6 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Le Monde de Toril</title>
   <style>
+    .accordion-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.2em;
+  text-align: left;
+  background-color: #222;
+  color: #f0f0f0;
+  border: none;
+  border-bottom: 1px solid #444;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-button:hover {
+  background-color: #44ccff;
+  color: #222;
+}
+
+.accordion-content {
+  padding: 0 15px;
+  background-color: #333;
+  color: white;
+  display: none; /* caché par défaut */
+}
+
+.accordion-content p {
+  margin: 10px 0;
+}
+ul {
+  column-count: 1; 
+  column-gap: 40px;
+  list-style-position: inside;
+  padding-left: 0;
+  margin-left: 1em;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+ul {
+  list-style-position: inside;
+  padding-left: 0;
+  margin-left: 1em;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+
      .back-to-top {
     display: inline-block;
     padding: 8px 12px;
@@ -76,11 +123,11 @@
       margin-top: 30px;
     }
 
-    p {
-      text-align: center;
-      max-width: 800px;
-      margin: 10px auto;
-    }
+  p {
+  text-align: justify;
+  max-width: 800px;
+  margin: 10px auto;
+}
 
 .back-to-top, .back-link {
   display: inline-block;
@@ -107,11 +154,13 @@
   margin-top: 40px;
 }
   </style>
+
 </head>
+
 <body id="top">
 
 <header>
-  <h1>🌎 Le Monde de Toril</h1>
+  <h1>Le Monde de Toril</h1>
   
   <nav>
     <a href="#univers">Univers général</a> |
@@ -133,20 +182,20 @@
   </section>
 
   <section id="divinites">
-    <h2>🛐 Les Divinités</h2>
+    <h2> Les Divinités</h2>
     <p>Les dieux sont omniprésents sur Toril. Certains sont distants, tandis que d'autres influencent directement les mortels par la magie divine.</p>
     <p>Les sorciers et autres lanceurs de sorts, quant à eux, puisent leur énergie dans une source magique appelée la Toile.</p>
     <p>Chaque dieu domine certains concepts ou créatures, créant alliances ou rivalités entre divinités. Tous reconnaissent l'autorité suprême du Seigneur Ao.</p>
   </section>
 
   <section id="temps">
-    <h2>📅 Le Temps : Calendrier des Vaux (DR)</h2>
+    <h2>Le Temps : Calendrier des Vaux (DR)</h2>
     <p>Les années sont comptées selon le Calendrier des Vaux ("Dale Reckoning" ou DR), débutant avec l’érection de la Pierre Permanente.</p>
-    <p>L’histoire décrite ici se déroule entre 1368 et 1369 DR.</p>
+    <p>L’histoire décrite ici se déroule entre 1489 et 1490DR.</p>
   </section>
 
   <section id="faerun">
-    <h2>🌍 Faerûn : Le Continent Principal</h2>
+    <h2> Faerûn : Le Continent Principal</h2>
 
 <div style="text-align: center; margin: 30px 0;">
   <a href="https://i.pinimg.com/originals/37/81/1a/37811a4f045a841b9c97dee4178d8ff4.jpg" target="_blank">
@@ -154,7 +203,7 @@
   <img src="https://i.pinimg.com/originals/37/81/1a/37811a4f045a841b9c97dee4178d8ff4.jpg" alt="Carte de Faerun" width="250">
 </a>
   </a>
-  <p style="font-style: italic; color: #555;">Faerun</p>
+
 </div>
 
 
@@ -162,45 +211,74 @@
     <p>Faerûn est une immense région de Toril, aux climats et cultures variés. Les nations humaines adoptent souvent un système féodal, avec des empires comme Calimshan et des cités-états comme la Porte de Baldur.</p>
     <p>Le continent est parcouru de mers intérieures telles que la Mer des Étoiles Déchues et la Mer de Lune.</p>
 
-    <h3>🧭 Nord de Faerûn</h3>
+    <h3> Nord de Faerûn</h3>
     <p><strong>La Côte des Épées</strong> s'étend sur la façade ouest, bordée par l'océan. C’est une région dynamique et célèbre, parfaite pour l'aventure.</p>
     <p><strong>Eauprofonde</strong>, "la Ville des splendeurs", et <strong>Padhiver</strong>, "le Joyau du Nord", en sont les cités majeures.</p>
     <p>Plus au nord, <strong>Valbise</strong> illustre la rudesse du climat arctique. La Côte des Épées est un axe vital d’échanges et d’aventures.</p>
 
-    <h3>🧭 Centre de Faerûn</h3>
+    <h3> Centre de Faerûn</h3>
     <p>Le centre combine forêts, vallées et déserts. La <strong>Terre des Vaux</strong> regroupe de petites nations agricoles, dont <strong>Valombre</strong>, la demeure de l’archimage Elminster Aumar.</p>
     <p>Le <strong>désert d'Anauroch</strong> s'étend au nord du centre, vestige de l’ancien Empire Nétherisse. De nombreuses nations prospères comme <strong>Cormyr</strong>, <strong>Chondath</strong> et <strong>Sembia</strong> occupent cette région.</p>
     <p>Le <strong>Bois de Chondal</strong> est une immense forêt peuplée de fées et de druides sauvages.</p>
 
-    <h3>🧭 Sud de Faerûn</h3>
+    <h3> Sud de Faerûn</h3>
     <p>Le sud est recouvert de jungles tropicales et de vastes déserts.</p>
-    <p><strong>Chult</strong>, encore relié au continent à cette époque, est dominé par la jungle dense et abrite <strong>Mezro</strong>, une ville mystérieuse réapparue en 1363 DR.</p>
+    <p><strong>Chult</strong>, encore relié au continent à cette époque, est dominé par la jungle dense et abrite <strong>Port Nyanzaru</strong>, une ville indépendante qui fait office de capitale.</p>
     <p>Plus au sud, la <strong>magocratie de Halruaa</strong> préserve l'héritage des Nétherisses.</p>
 
 <section id="La Côte des Épées">
-
     <h2> La Côte des Épées</h2>
   <p>Malgré l'essor de la civilisation, la Côte des Épées reste une terre sauvage et dangereuse. Orcs, trolls, gobelins, ogres, kobolds et grouilleux attaquent fréquemment les voyageurs imprudents.</p>
     <p>Les forêts épaisses, comme Bois-Manteau, offrent des refuges parfaits aux monstres et hors-la-loi. De nombreux aventuriers bravent pourtant ces périls en quête de gloire et de fortune.</p>
-<h3> La Porte de Baldur</h3>
- <p></p>La ville portuaire de la Porte de Baldur est l'une des plus grandes et des plus puissantes de Faerûn Centre Ouest.C'est une ville-état qui rivalise avec les riches nations mercantiles en termes de commerce.
-  <p></p>la Porte de Baldur sert en tant que rares oasis de 
-stabilité le long de la côte de l'épée autrement dangereuse et à l'intérieur des terres sauvages du cœur occidental.
-
-    <h3> Bois-Manteau</h3>
-    <p>Située au sud du Chionthar, Bois-Manteau est une forêt dense et dangereuse. Elle cache de nombreux périls : créatures féériques malveillantes, araignées monstrueuses, et les druides de l'ombre, farouches défenseurs de la nature contre la civilisation.</p>
-    <p>À l'insu de la plupart, un riche gisement de fer est exploité secrètement par l'organisation du Trône de Fer.</p>
  
+<div style="text-align: center; margin: 30px 0;">
+  <a href="../image/cote des épées.jpg" target="_blank">
+    <a href="../image/cote des épées.jpg" target="_blank" class="lightbox">
+  <img src="../image/cote des épées.jpg" alt="Carte de la côte des épées" width="250">
+</a>
+  </a>
+
+</div>
+
     <h3> Colonisation et établissements humains</h3>
     <p>Malgré les dangers, plusieurs villages et villes ont prospéré :</p>
-    <p><strong>Bérégost</strong> : une ville marchande réputée pour ses auberges et commerces accueillants.</p>
-    <p><strong>Nashkel</strong> : un village agricole notable plus au sud.</p>
-    <p><strong>Château-Suif</strong> : une forteresse-monastère célèbre pour sa bibliothèque millénaire.</p>
-     <p>Château-Suif conserve depuis des siècles les connaissances de Faerûn, sous la garde de moines érudits.</p>
-    <p>Alaundo le Sage, célèbre prophète, y a vécu, et ses prophéties sont encore chantées aujourd'hui par les moines.</p>
-    <p><strong>Auberge du Brasamical</strong> : halte populaire pour les voyageurs de la Côte.</p>
-
  
+<div class="accordion">
+
+  <button class="accordion-button">11 Auberge de Brasamical</button>
+  <div class="accordion-content">
+    <p>Depuis plus d'un siècle, l'Auberge de Brasamical offre hospitalité et sécurité aux voyageurs de la Porte de Baldur, d'Amn et d'ailleurs. Elle est un havre de paix au milieu des terres sauvages.</p>
+  </div>
+
+  <button class="accordion-button">1 La Porte de Baldur</button>
+  <div class="accordion-content">
+    <p>Ville portuaire emblématique, la Porte de Baldur est l'une des plus grandes et puissantes cités de Faerûn. Centre du commerce et de la politique, elle attire aventuriers et marchands du monde entier.</p>
+  </div>
+
+
+  <button class="accordion-button">3 Bérégost</button>
+  <div class="accordion-content">
+    <p>Bérégost est une ville marchande prospère, réputée pour ses auberges accueillantes et ses artisans renommés. C'est une halte incontournable pour tout aventurier en route vers le sud.</p>
+  </div>
+
+  <button class="accordion-button">4 Château-Suif</button>
+  <div class="accordion-content">
+    <p>Château-Suif est une forteresse-monastère renommée pour abriter l'une des plus vastes bibliothèques de Faerûn. Protégé par des moines érudits, il conserve les savoirs anciens et les prophéties d'Alaundo le Sage.</p>
+  </div>
+  
+   <button class="accordion-button">21 Nashkell</button>
+  <div class="accordion-content">
+    <p>Nashkell est un village agricole situé au sud de la Porte de Baldur, connu pour ses festivals champêtres... et pour les mines proches, souvent sujettes à des troubles mystérieux.</p>
+  </div>
+  
+  <button class="accordion-button"> Bois-Manteau</button>
+  <div class="accordion-content">
+    <p>Bois-Manteau est une vaste forêt dense, pleine de mystères et de dangers. Les créatures féeriques, les bandits et les monstres y trouvent refuge, défiant les voyageurs téméraires.</p>
+  </div>
+  
+</div>
+</div>
+
    
 </section>
 
@@ -210,6 +288,13 @@ stabilité le long de la côte de l'épée autrement dangereuse et à l'intérie
 </div>
 
 </main>
-
+  <script>
+document.querySelectorAll('.accordion-button').forEach(button => {
+  button.addEventListener('click', () => {
+    const content = button.nextElementSibling;
+    content.style.display = (content.style.display === 'block') ? 'none' : 'block';
+  });
+});
+</script>
 </body>
 </html>

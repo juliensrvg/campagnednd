@@ -3,100 +3,283 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Webtoon</title>
+  <title>WEBTOON</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <style>
     body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f4f4f4;
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      font-size: 4rem;
+      color: black;
+      text-align: center;
+      margin-top: 50px;
+    }
+    h2 {
+      font-size: 3rem;
+      color: black;
+      text-align: center;
+      margin-top: 50px;
+    }
+    .content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      width: 80%;
+      max-width: 800px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 30px;
+      font-size: 1.2rem;
+      line-height: 1.6;
       color: #333;
     }
-
-    header, main, section {
+    .galerie {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
       padding: 20px;
-      margin: 20px;
-      background: white;
-      border-radius: 8px;
     }
-
-    h1 {
-      font-size: 3em;
-      text-align: center;
-      margin-bottom: 10px;
+    .miniature {
+      width: 100px;
+      height: auto;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+      cursor: pointer;
+      transition: transform 0.2s ease;
     }
-
-    nav {
-      text-align: center;
-      margin: 20px 0;
+    .miniature:hover {
+      transform: scale(1.05);
     }
-
-    nav a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #0077cc;
-      font-weight: bold;
-      font-size: 1.2em;
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
     }
+    
+    .lightbox:target {
+      display: flex;
 
-    nav a:hover {
-      text-decoration: underline;
     }
-
-    h2 {
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px black;
+  transition: opacity 0.5s ease, transform 0.5s ease; 
+  opacity: 1;
+  transform: scale(0.95); 
+}
+    .lightbox a.close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
       font-size: 2em;
-      text-align: center;
-      margin-top: 40px;
+      text-decoration: none;
+      z-index: 1000;
+      font-weight: bold;
     }
-
-    h3 {
-      font-size: 1.5em;
-      text-align: center;
-      margin-top: 30px;
+    .lightbox a.close:hover {
+      color: #ccc;
     }
-
-    p {
-      text-align: center;
-      max-width: 800px;
-      margin: 10px auto;
+    .lightbox a.prev, .lightbox a.next {
+      position: absolute;
+      top: 50%;
+      font-size: 3em;
+      color: white;
+      text-decoration: none;
+      padding: 0 20px;
+      transform: translateY(-50%);
+      z-index: 1000;
     }
-
-.back-to-top, .back-link {
-  display: inline-block;
-  margin: 20px;
-  padding: 12px 24px;
-  background-color: #222;
-  color: #f0f0f0;
-  border: 2px solid #44ccff;
-  border-radius: 12px;
-  font-size: 1.2em;
-  font-weight: bold;
-  text-decoration: none;
-  box-shadow: 0 0 8px #44ccff;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.back-to-top:hover, .back-link:hover {
-  background-color: #44ccff;
-  color: #222;
-  box-shadow: 0 0 20px #44ccff;
-}
-.buttons-container {
+    .lightbox a.prev:hover, .lightbox a.next:hover {
+      color: #ccc;
+    }
+    .lightbox a.prev { left: 10px; }
+    .lightbox a.next { right: 10px; }
+    .back-link {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .back-link:hover {
+      background-color: #555;
+    }
+    #counter {
+  color: white;
+  font-size: 1.5em;
+  margin-top: 10px;
   text-align: center;
-  margin-top: 40px;
+  position: absolute;
+  bottom: 30px;
 }
 
   </style>
 </head>
+
 <body id="top">
 
-A VENIR........
-<div class="buttons-container">
-  <a href="#top" class="back-to-top">⬆️ Revenir en haut</a>
-  <a href="index.html" class="back-link">⬅️ Retour à l'index</a>
+  <h1>✦ WEBTOON ✦</h1>
+
+  <div class="content">
+    <h2 id="chapitre1">✦ Chapitre 1 ✦</h2>
+
+    <div class="galerie">
+    <a href="#lightbox" class="miniature-link" data-index="1"><img class="miniature" src="vignettes/vignette1.png" alt="Vignette 1"></a>
+<a href="#lightbox" class="miniature-link" data-index="2"><img class="miniature" src="vignettes/vignette2.png" alt="Vignette 2"></a>
+<a href="#lightbox" class="miniature-link" data-index="3"><img class="miniature" src="vignettes/vignette3.png" alt="Vignette 3"></a>
+<a href="#lightbox" class="miniature-link" data-index="4"><img class="miniature" src="vignettes/vignette4.png" alt="Vignette 4"></a>
+<a href="#lightbox" class="miniature-link" data-index="5"><img class="miniature" src="vignettes/vignette5.png" alt="Vignette 5"></a>
+<a href="#lightbox" class="miniature-link" data-index="6"><img class="miniature" src="vignettes/vignette6.png" alt="Vignette 6"></a>
+<a href="#lightbox" class="miniature-link" data-index="7"><img class="miniature" src="vignettes/vignette7.png" alt="Vignette 7"></a>
+<a href="#lightbox" class="miniature-link" data-index="8"><img class="miniature" src="vignettes/vignette8.png" alt="Vignette 8"></a>
+<a href="#lightbox" class="miniature-link" data-index="9"><img class="miniature" src="vignettes/vignette9.png" alt="Vignette 9"></a>
+<a href="#lightbox" class="miniature-link" data-index="10"><img class="miniature" src="vignettes/vignette10.png" alt="Vignette 10"></a>
+<a href="#lightbox" class="miniature-link" data-index="11"><img class="miniature" src="vignettes/vignette11.png" alt="Vignette 11"></a>
+<a href="#lightbox" class="miniature-link" data-index="12"><img class="miniature" src="vignettes/vignette12.png" alt="Vignette 12"></a>
+<a href="#lightbox" class="miniature-link" data-index="13"><img class="miniature" src="vignettes/vignette13.png" alt="Vignette 13"></a>
+<a href="#lightbox" class="miniature-link" data-index="14"><img class="miniature" src="vignettes/vignette14.png" alt="Vignette 14"></a>
+<a href="#lightbox" class="miniature-link" data-index="15"><img class="miniature" src="vignettes/vignette15.png" alt="Vignette 15"></a>
+<a href="#lightbox" class="miniature-link" data-index="16"><img class="miniature" src="vignettes/vignette16.png" alt="Vignette 16"></a>
+<a href="#lightbox" class="miniature-link" data-index="17"><img class="miniature" src="vignettes/vignette17.png" alt="Vignette 17"></a>
+<a href="#lightbox" class="miniature-link" data-index="18"><img class="miniature" src="vignettes/vignette18.png" alt="Vignette 18"></a>
+<a href="#lightbox" class="miniature-link" data-index="19"><img class="miniature" src="vignettes/vignette19.png" alt="Vignette 19"></a>
+<a href="#lightbox" class="miniature-link" data-index="20"><img class="miniature" src="vignettes/vignette20.png" alt="Vignette 20"></a>
+<a href="#lightbox" class="miniature-link" data-index="21"><img class="miniature" src="vignettes/vignette21.png" alt="Vignette 21"></a>
+<a href="#lightbox" class="miniature-link" data-index="22"><img class="miniature" src="vignettes/vignette22.png" alt="Vignette 22"></a>
+<a href="#lightbox" class="miniature-link" data-index="23"><img class="miniature" src="vignettes/vignette23.png" alt="Vignette 23"></a>
+<a href="#lightbox" class="miniature-link" data-index="24"><img class="miniature" src="vignettes/vignette24.png" alt="Vignette 24"></a>
+<a href="#lightbox" class="miniature-link" data-index="25"><img class="miniature" src="vignettes/vignette25.png" alt="Vignette 25"></a>
+<a href="#lightbox" class="miniature-link" data-index="26"><img class="miniature" src="vignettes/vignette26.png" alt="Vignette 26"></a>
+<a href="#lightbox" class="miniature-link" data-index="27"><img class="miniature" src="vignettes/vignette27.png" alt="Vignette 27"></a>
+<a href="#lightbox" class="miniature-link" data-index="28"><img class="miniature" src="vignettes/vignette28.png" alt="Vignette 28"></a>
+<a href="#lightbox" class="miniature-link" data-index="29"><img class="miniature" src="vignettes/vignette29.png" alt="Vignette 29"></a>
+<a href="#lightbox" class="miniature-link" data-index="30"><img class="miniature" src="vignettes/vignette30.png" alt="Vignette 30"></a>
+<a href="#lightbox" class="miniature-link" data-index="31"><img class="miniature" src="vignettes/vignette31.png" alt="Vignette 31"></a>
+<a href="#lightbox" class="miniature-link" data-index="32"><img class="miniature" src="vignettes/vignette32.png" alt="Vignette 32"></a>
+<a href="#lightbox" class="miniature-link" data-index="33"><img class="miniature" src="vignettes/vignette33.png" alt="Vignette 33"></a>
+<a href="#lightbox" class="miniature-link" data-index="34"><img class="miniature" src="vignettes/vignette34.png" alt="Vignette 34"></a>
+<a href="#lightbox" class="miniature-link" data-index="35"><img class="miniature" src="vignettes/vignette35.png" alt="Vignette 35"></a>
+<a href="#lightbox" class="miniature-link" data-index="36"><img class="miniature" src="vignettes/vignette36.png" alt="Vignette 36"></a>
+<a href="#lightbox" class="miniature-link" data-index="37"><img class="miniature" src="vignettes/vignette37.png" alt="Vignette 37"></a>
+
+    </div>
+  </div>
+
+  <!-- Lightbox unique -->
+ <div id="lightbox" class="lightbox">
+  <a href="#" class="close">✖</a>
+  <a href="#" id="prev" class="prev">←</a>
+  <img id="lightbox-img" src="" alt="">
+  <div id="counter"></div> 
+  <a href="#" id="next" class="next">→</a>
 </div>
 
-</main>
+
+  <a href="#top" class="back-link">Revenir en haut</a>
+  <a href="index.html" class="back-link">Retour à l'index</a>
+
+  <script>
+  const totalImages = 37;
+  let currentIndex = 1;
+
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const prevBtn = document.getElementById("prev");
+  const nextBtn = document.getElementById("next");
+
+  // Ouvrir la lightbox
+  document.querySelectorAll(".miniature-link").forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      currentIndex = parseInt(link.dataset.index);
+      updateLightbox();
+      lightbox.style.display = "flex"; // <<< AJOUT POUR FORCER l'ouverture
+    });
+  });
+
+  // Fermer la lightbox quand on clique sur ✖
+  document.querySelector(".close").addEventListener("click", e => {
+    e.preventDefault();
+    lightbox.style.display = "none";
+  });
+
+function updateLightbox() {
+  lightboxImg.style.opacity = 0;
+  lightboxImg.style.transform = "scale(0.95)";
+
+  setTimeout(() => {
+    lightboxImg.src = `vignettes/vignette${currentIndex}.png`;
+    lightboxImg.alt = `Vignette ${currentIndex}`;
+
+    lightboxImg.onload = () => {
+      lightboxImg.style.opacity = 1;
+      lightboxImg.style.transform = "scale(1)";
+    };
+
+    // ✨ Mettre à jour le compteur ici
+    document.getElementById("counter").textContent = `Vignette ${currentIndex} / ${totalImages}`;
+  }, 200);
+}
+
+// Navigation ←
+prevBtn.addEventListener("click", e => {
+  e.preventDefault();
+  currentIndex = currentIndex > 1 ? currentIndex - 1 : totalImages;
+  updateLightbox();
+});
+
+// Navigation →
+nextBtn.addEventListener("click", e => {
+  e.preventDefault();
+  currentIndex = currentIndex < totalImages ? currentIndex + 1 : 1;
+  updateLightbox();
+});
+
+
+// Fermer la lightbox si on clique en dehors de l'image
+lightbox.addEventListener("click", e => {
+  if (e.target === lightbox) {
+    lightbox.style.display = "none";
+  }
+});
+// Navigation au clavier
+document.addEventListener("keydown", e => {
+  if (lightbox.style.display === "flex") { // seulement si la lightbox est ouverte
+    if (e.key === "ArrowLeft") {
+      // Flèche gauche : image précédente
+      currentIndex = currentIndex > 1 ? currentIndex - 1 : totalImages;
+      updateLightbox();
+    }
+    if (e.key === "ArrowRight") {
+      // Flèche droite : image suivante
+      currentIndex = currentIndex < totalImages ? currentIndex + 1 : 1;
+      updateLightbox();
+    }
+    if (e.key === "Escape") {
+      // Touche Échap : fermer la lightbox
+      lightbox.style.display = "none";
+    }
+  }
+});
+</script>
 
 </body>
-</html>-
-
+</html>

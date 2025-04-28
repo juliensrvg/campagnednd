@@ -156,14 +156,7 @@ ul {
   </style>
 
 </head>
-  <script>
-document.querySelectorAll('.accordion-button').forEach(button => {
-  button.addEventListener('click', () => {
-    const content = button.nextElementSibling;
-    content.style.display = (content.style.display === 'block') ? 'none' : 'block';
-  });
-});
-</script>
+
 <body id="top">
 
 <header>
@@ -281,10 +274,7 @@ document.querySelectorAll('.accordion-button').forEach(button => {
   </div>
 
 </div>
-      </ul>
 </div>
-</ul>
-</ul>
 
 <h3> La Porte de Baldur</h3>
  <p></p>La ville portuaire de la Porte de Baldur est l'une des plus grandes et des plus puissantes de Faerûn Centre Ouest.C'est une ville-état qui rivalise avec les riches nations mercantiles en termes de commerce.
@@ -309,6 +299,13 @@ document.querySelectorAll('.accordion-button').forEach(button => {
 </div>
 
 </main>
-
+  <script>
+document.querySelectorAll('.accordion-button').forEach(button => {
+  button.addEventListener('click', () => {
+    const content = button.nextElementSibling;
+    content.style.display = (content.style.display === 'block') ? 'none' : 'block';
+  });
+});
+</script>
 </body>
 </html>

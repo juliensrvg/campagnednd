@@ -5,6 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Le Monde de Toril</title>
   <style>
+    .accordion-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.2em;
+  text-align: left;
+  background-color: #222;
+  color: #f0f0f0;
+  border: none;
+  border-bottom: 1px solid #444;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-button:hover {
+  background-color: #44ccff;
+  color: #222;
+}
+
+.accordion-content {
+  padding: 0 15px;
+  background-color: #333;
+  color: white;
+  display: none; /* caché par défaut */
+}
+
+.accordion-content p {
+  margin: 10px 0;
+}
 ul {
   column-count: 1; 
   column-gap: 40px;
@@ -126,6 +155,14 @@ ul {
 }
   </style>
 </head>
+  <script>
+document.querySelectorAll('.accordion-button').forEach(button => {
+  button.addEventListener('click', () => {
+    const content = button.nextElementSibling;
+    content.style.display = (content.style.display === 'block') ? 'none' : 'block';
+  });
+});
+</script>
 <body id="top">
 
 <header>
@@ -209,41 +246,40 @@ ul {
 
 </div>
 <h2>Les lieux du monde</h2>
-  <ul>
-  <div style="max-height: 400px; overflow-y: auto; padding: 10px; border: 1px solid #ccc; border-radius: 8px;">
-  <ul>
 
- <li>1. La Porte de Baldur</li>
-  <li>2. La rivière de l'Ours</li>
-  <li>3. Bérégost</li>
-  <li>4. Château-Suif</li>
-  <li>5. Bois-Manteau</li>
-  <li>6. Montagne des Pics Brumeux</li>
-  <li>7. Cromlech des Druides</li>
-  <li>8. Chutes des dryades</li>
-  <li>9. Tour de Durlag</li>
-  <li>10. Le Pont de Flamevin</li>
-  <li>11. Auberge de Brasamical</li>
-  <li>12. Forteresse des Gnolls</li>
-  <li>13. Grande Loge</li>
-  <li>14. Grand arbre de l'ombre</li>
-  <li>15. Gullykin</li>
-  <li>16. Haute Haie</li>
-  <li>17. Les mines du Trône de Fer</li>
-  <li>18. Phare</li>
-  <li>19. Village du Chionthar inférieur</li>
-  <li>20. Jardin de Mutamin’s</li>
-  <li>21. Nashkell</li>
-  <li>22. Mines de Nashkell</li>
-  <li>23. Rivière Chionthar</li>
-  <li>24. Route, voie du commerce</li>
-  <li>25. Route, voie de la Côte</li>
-  <li>26. Route, voie du Lion</li>
-  <li>27. Côte du naufrage</li>
-  <li>28. Chant du temple du matin</li>
-  <li>29. Village du Chionthar supérieur</li>
-  <li>30. Bois des dents tranchantes</li>
-  <li>31. Collines de la Vouivre</li>
+<div class="accordion">
+
+  <button class="accordion-button">🛡️ Auberge de Brasamical</button>
+  <div class="accordion-content">
+    <p>Depuis plus d'un siècle, l'Auberge de Brasamical offre hospitalité et sécurité aux voyageurs de la Porte de Baldur, d'Amn et d'ailleurs. Elle est un havre de paix au milieu des terres sauvages.</p>
+  </div>
+
+  <button class="accordion-button">⚓ La Porte de Baldur</button>
+  <div class="accordion-content">
+    <p>Ville portuaire emblématique, la Porte de Baldur est l'une des plus grandes et puissantes cités de Faerûn. Centre du commerce et de la politique, elle attire aventuriers et marchands du monde entier.</p>
+  </div>
+
+  <button class="accordion-button">🌳 Bois-Manteau</button>
+  <div class="accordion-content">
+    <p>Bois-Manteau est une vaste forêt dense, pleine de mystères et de dangers. Les créatures féeriques, les bandits et les monstres y trouvent refuge, défiant les voyageurs téméraires.</p>
+  </div>
+
+  <button class="accordion-button">🏘️ Bérégost</button>
+  <div class="accordion-content">
+    <p>Bérégost est une ville marchande prospère, réputée pour ses auberges accueillantes et ses artisans renommés. C'est une halte incontournable pour tout aventurier en route vers le sud.</p>
+  </div>
+
+  <button class="accordion-button">🌾 Nashkell</button>
+  <div class="accordion-content">
+    <p>Nashkell est un village agricole situé au sud de la Porte de Baldur, connu pour ses festivals champêtres... et pour les mines proches, souvent sujettes à des troubles mystérieux.</p>
+  </div>
+
+  <button class="accordion-button">📚 Château-Suif</button>
+  <div class="accordion-content">
+    <p>Château-Suif est une forteresse-monastère renommée pour abriter l'une des plus vastes bibliothèques de Faerûn. Protégé par des moines érudits, il conserve les savoirs anciens et les prophéties d'Alaundo le Sage.</p>
+  </div>
+
+</div>
       </ul>
 </div>
 </ul>

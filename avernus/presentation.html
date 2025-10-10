@@ -66,6 +66,47 @@
       margin-bottom: 15px;
     }
 
+    .tooltip-container {
+      position: relative;
+      display: inline-block;
+      text-align: center;
+      margin: 20px auto;
+    }
+
+    .tooltip-container img {
+      border: 3px solid #bca55b;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(188, 165, 91, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .tooltip-container img:hover {
+      transform: scale(1.05);
+    }
+
+    .tooltip-text {
+      visibility: hidden;
+      background-color: #222;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 6px 10px;
+      position: absolute;
+      z-index: 1;
+      bottom: 110%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      font-size: 0.9em;
+      white-space: nowrap;
+    }
+
+    .tooltip-container:hover .tooltip-text {
+      visibility: visible;
+      opacity: 1;
+    }
+
     .back-to-top, .back-link {
       display: inline-block;
       margin: 20px;
@@ -91,6 +132,11 @@
       text-align: center;
       margin-top: 40px;
     }
+
+    /* Séparation claire entre sections */
+    section + section {
+      margin-top: 60px;
+    }
   </style>
 </head>
 
@@ -98,41 +144,116 @@
   <header>
     <h1>Nos Héros</h1>
     <nav>
-        <p>  <a href="#section1">Lumien TORZALAN, Paladine</a>
-      <p>      <a href="#section2">Brutalina, Guerrière</a>
-        <p>  <a href="#section3">Lars VANDRAGEN, Barbare</a>
-         <p> <a href="#section4">Léo Magique, Touche-à-tout</a>
-     <p>     <a href="#section5">Kehldar, Rôdeur</a>
-      <p>    <a href="#section6">Lumnos, Prêtre d’Ilmater</a>
-      <p>    <a href="#section7">Na-Kun Plum, Druide</a>
-       <p>   <a href="#section8">Gim FabbleStabble, Magicien</a>
+      <a href="#section1">Lumien TORZALAN</a>
+      <a href="#section2">Brutalina</a>
+      <a href="#section3">Lars VANDRAGEN</a>
+      <a href="#section4">Léo Magique</a>
+      <a href="#section5">Kehldar</a>
+      <a href="#section6">Lumnos</a>
+      <a href="#section7">Na-Kun Plum</a>
+      <a href="#section8">Gim FabbleStabble</a>
     </nav>
   </header>
 
   <main>
+    <!-- Section 1 : Lumien -->
     <section id="section1">
       <h2>✦ Lumien TORZALAN ✦</h2>
-<div class="tooltip-container">
-  <img src="../image/lumien.jpg" alt="Portrait de Lumien Torzalan" width="150" />
-  <div class="tooltip-text">Portrait de Lumien</div>
-</div>
+      <div class="tooltip-container">
+        <img src="../image/lumien.jpg" alt="Portrait de Lumien Torzalan" width="150" />
+        <div class="tooltip-text">Portrait de Lumien</div>
+      </div>
       <div class="biographie">
         <p>Quand vous voyez Lumien pour la première fois, vous ne pouvez vous empêcher de détacher votre regard pendant un moment : elle aurait du mal à passer inaperçue ! C’est une jeune femme tieffeline d’environ 1m65. Sans nul doute une tieffeline infernale avec sa peau rouge, ses petites cornes et la queue fourchue, rouge également, qui ressort derrière sa cotte de mailles. Elle est vêtue assez élégamment et semble prendre bien soin d’elle et de son apparence. Mais les armes qu’elle porte et son bouclier parlent d’eux-mêmes.</p>
-
         <p>Quand vous la regardez dans ses yeux d’un jaune doré, vous y décelez une âme de guerrière derrière ses beaux atours. Les plus perspicaces percevront toutefois comme une pointe de tristesse dans son regard, ou peut-être autre chose…</p>
-
         <p>Quelques instants passés en sa compagnie vous révèleront qu’elle a reçu une bonne éducation, sans doute dans la petite noblesse — ce qui est assez surprenant pour une tieffeline. Personne n’a jamais entendu parler de tieffelin dans la noblesse ! Elle est toutefois de bonne compagnie et ne craint pas de se mêler aux autres. Et quand elle se met à parler, souvent avec passion, ses paroles semblent captiver son auditoire avec attention.</p>
-
         <p>Lors du voyage avec la caravane vers la Porte de Baldur, elle a pu parler de sa mère, Lady Torzalan, une noble dame qui a veillé à son éducation, ainsi que de ses deux enfants avec qui Lumien a grandi. Et chaque matin, Lumien se présente toujours impeccable ; même si ses vêtements ont pris la poussière durant le voyage, ils ont l’air toujours propres.</p>
-
         <p>En tout cas, elle a une âme de commandant, cela se sent quand on est en sa compagnie. Mais est-ce que tout le monde serait prêt à faire confiance à une personne de cette race ? Après tout, les tieffelins ont des ancêtres issus des Enfers ! Elle, en revanche, a l’air déterminée et semble prête à risquer sa propre vie pour protéger ses compagnons… enfin, ceux qui le méritent.</p>
       </div>
-
       <div class="buttons-container">
         <a href="#top" class="back-to-top">⬆️ Revenir en haut</a>
         <a href="index.html" class="back-link">⬅️ Retour à l'index</a>
       </div>
     </section>
+
+    <!-- Section 2 à 8 : structure vide à remplir -->
+    <section id="section2">
+      <h2>✦ Brutalina ✦</h2>
+      <div class="biographie">
+        <p>Biographie à remplir...</p>
+      </div>
+      <div class="buttons-container">
+        <a href="#top" class="back-to-top">⬆️ Revenir en haut</a>
+        <a href="index.html" class="back-link">⬅️ Retour à l'index</a>
+      </div>
+    </section>
+
+    <section id="section3">
+      <h2>✦ Lars VANDRAGEN ✦</h2>
+      <div class="biographie">
+        <p>Biographie à remplir...</p>
+      </div>
+      <div class="buttons-container">
+        <a href="#top" class="back-to-top">⬆️ Revenir en haut</a>
+        <a href="index.html" class="back-link">⬅️ Retour à l'index</a>
+      </div>
+    </section>
+
+    <section id="section4">
+      <h2>✦ Léo Magique ✦</h2>
+      <div class="biographie">
+        <p>Biographie à remplir...</p>
+      </div>
+      <div class="buttons-container">
+        <a href="#top" class="back-to-top">⬆️ Revenir en haut</a>
+        <a href="index.html" class="back-link">⬅️ Retour à l'index</a>
+      </div>
+    </section>
+
+    <section id="section5">
+      <h2>✦ Kehldar ✦</h2>
+      <div class="biographie">
+        <p>Biographie à remplir...</p>
+      </div>
+      <div class="buttons-container">
+        <a href="#top" class="back-to-top">⬆️ Revenir en haut</a>
+        <a href="index.html" class="back-link">⬅️ Retour à l'index</a>
+      </div>
+    </section>
+
+    <section id="section6">
+      <h2>✦ Lumnos ✦</h2>
+      <div class="biographie">
+        <p>Biographie à remplir...</p>
+      </div>
+      <div class="buttons-container">
+        <a href="#top" class="back-to-top">⬆️ Revenir en haut</a>
+        <a href="index.html" class="back-link">⬅️ Retour à l'index</a>
+      </div>
+    </section>
+
+    <section id="section7">
+      <h2>✦ Na-Kun Plum ✦</h2>
+      <div class="biographie">
+        <p>Biographie à remplir...</p>
+      </div>
+      <div class="buttons-container">
+        <a href="#top" class="back-to-top">⬆️ Revenir en haut</a>
+        <a href="index.html" class="back-link">⬅️ Retour à l'index</a>
+      </div>
+    </section>
+
+    <section id="section8">
+      <h2>✦ Gim FabbleStabble ✦</h2>
+      <div class="biographie">
+        <p>Biographie à remplir...</p>
+      </div>
+      <div class="buttons-container">
+        <a href="#top" class="back-to-top">⬆️ Revenir en haut</a>
+        <a href="index.html" class="back-link">⬅️ Retour à l'index</a>
+      </div>
+    </section>
+
   </main>
 </body>
 </html>
